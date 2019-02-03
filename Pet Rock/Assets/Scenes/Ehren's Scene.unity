@@ -182,6 +182,7 @@ MonoBehaviour:
   maxspeed: 5
   jumpheight: 0.5
   gravity: -1
+  cam: {fileID: 1895982153}
 --- !u!65 &691444099
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -296,6 +297,7 @@ MonoBehaviour:
   maxspeed: 5
   jumpheight: 0.5
   gravity: -1
+  cam: {fileID: 1895982153}
 --- !u!65 &732349031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -648,10 +650,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895982151}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.15001987, y: -0.18232362, z: 0.028259942, w: 0.9713154}
+  m_LocalPosition: {x: 1.92, y: 3.68, z: -7.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 17.562, y: -21.261002, z: 0.012}
