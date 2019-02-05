@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class cameraFollow : MonoBehaviour {
     public Transform playerTransform;
+    public Transform rockTransform;
     private Vector3 cameraOffset;
     public float orbitSpeed;
     [Range(0.01f, 1.00f)]
     public float smoothness;
+    private Transform currentTransform;
 
     void Start() {
-        cameraOffset = transform.position - playerTransform.position;
+        currentTransform = playerTransform;
+        cameraOffset = transform.position - currentTransform.position;
     }
 
     void Update() {
         // follow player by camera offset
-        Vector3 positionUpdate = playerTransform.position + cameraOffset;
+        Vector3 positionUpdate = currentTransform.position + cameraOffset;
         transform.position = Vector3.Slerp(transform.position, positionUpdate, smoothness);
 
         // allow camera to orbit horizontally
@@ -25,8 +28,11 @@ public class cameraFollow : MonoBehaviour {
 
         // set player's Y rotation to the camera's Y rotation
         float cameraRotationY = transform.eulerAngles.y;
-        playerTransform.eulerAngles = new Vector3(0f, cameraRotationY, 0f);
-        transform.LookAt(playerTransform);
+        currentTransform.eulerAngles = new Vector3(0f, cameraRotationY, 0f);
+        transform.LookAt(currentTransform);
     }
+
+    void FocusRock() { currentTransform = rockTransform; }
+    void FocusPlayer() { currentTransform = playerTransform; }
 }
 
