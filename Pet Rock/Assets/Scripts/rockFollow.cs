@@ -18,6 +18,9 @@ public class rockFollow : MonoBehaviour {
         }
     }
 
+    // disable the rock's ai follow
     void DisableFollow() { followEnable = false; }
+
+    // enable the rock's ai follow
     void EnableFollow() { followEnable = true; }
 }
