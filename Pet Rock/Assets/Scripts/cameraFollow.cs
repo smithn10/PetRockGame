@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraFollow : MonoBehaviour {
+public class CameraFollow : MonoBehaviour {
     public Transform playerTransform;
     public Transform rockTransform;
     private Vector3 cameraOffset;
