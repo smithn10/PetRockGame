@@ -5,19 +5,24 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     CharControl currChar;
+    public GameObject player1;
+    public GameObject player2;
     int currIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
-        currChar = transform.GetChild(0).GetComponent<CharControl>();
+        currChar = player1.GetComponent<CharControl>();
     }
     
     void changeChar()
     {
         currIndex++;
-        if (currIndex > transform.childCount-1)
+        if (currIndex > 1)
+        {
             currIndex = 0;
-        currChar = transform.GetChild(currIndex).GetComponent<CharControl>();
+            currChar = player1.GetComponent<CharControl>();
+        }else
+            currChar = player2.GetComponent<CharControl>();
     }
 
     // Update is called once per frame
