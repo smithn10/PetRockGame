@@ -12,7 +12,7 @@ public class cameraFollow : MonoBehaviour {
     private Transform currentTransform;
 
     void Start() {
-        currentTransform = playerTransform;
+        currentTransform = playerTransform; // initialize to player at start
         cameraOffset = transform.position - currentTransform.position;
     }
 
@@ -32,7 +32,10 @@ public class cameraFollow : MonoBehaviour {
         transform.LookAt(currentTransform);
     }
 
+    // switch camera focus to rock
     void FocusRock() { currentTransform = rockTransform; }
+
+    // switch camera focus to player
     void FocusPlayer() { currentTransform = playerTransform; }
 }
 
