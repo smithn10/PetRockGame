@@ -31,5 +31,7 @@ public class InputManager : MonoBehaviour
         currChar.SetInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetButtonDown("Jump"));
         if (Input.GetButtonDown("ChangeChar"))
             changeChar();
+        if (Input.GetButtonDown("Interact"))
+            currChar.Interact();
     }
 }
