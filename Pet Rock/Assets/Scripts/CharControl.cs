@@ -6,41 +6,122 @@ public class CharControl : MonoBehaviour
 {
     public float accel = 10;
     public float decel = 5;
-    public float maxspeed = 2;
-    public float jumpheight = 3;
+    public float maxspeed = 5;
+    public float jumpheight = 0.5f;
     public float gravity = -1;
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
     private bool jumpbool = false;
     private Vector2 velocity = new Vector3(0, 0, 0);
     private CharacterController control;
+    public float interactDistance = 1;
+
+    private Transform attachedobjectmin;
+    private Transform attachedobjectmax;
+    private bool onLadder = false;
+    private bool holdingSomething = false;
+    private Interactable helditem;
     // Start is called before the first frame update
     void Start()
     {
         control = transform.GetComponent<CharacterController>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        if (control.isGrounded && velocity.y < 0)
-            velocity.y = 0;
-        velocity.y += gravity * Time.deltaTime;
-        movevec = camRelative(movevec);
-        control.Move(movevec * Time.deltaTime * maxspeed);
-        control.Move(velocity);
-        if (movevec != Vector3.zero)
-            transform.forward = movevec;
-        if (jumpbool)
-            Jump();
-        movevec = new Vector3(0, 0, 0);
-        jumpbool = false;
+        if (onLadder)
+        {
+            velocity = new Vector3(0, 0, 0);
+            control.Move(new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed);
+            if (transform.position.y > attachedobjectmax.position.y)
+                transform.position = new Vector3(transform.position.x, attachedobjectmax.position.y, transform.position.z);
+            if (transform.position.y < attachedobjectmin.position.y)
+                transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
+        }
+        else
+        {
+            if (control.isGrounded && velocity.y < 0)
+                velocity.y = 0;
+            velocity.y += gravity * Time.deltaTime;
+            movevec = camRelative(movevec);
+            control.Move(movevec * Time.deltaTime * maxspeed);
+            control.Move(velocity);
+            if (movevec != Vector3.zero)
+                transform.forward = movevec;
+            if (jumpbool && control.isGrounded)
+                Jump();
+            movevec = new Vector3(0, 0, 0);
+            jumpbool = false;
+        }
     }
 
     public void SetInput(float horizontal, float vertical, bool jumping)
     {
         movevec = new Vector3(horizontal, 0, vertical);
         jumpbool = jumping;
+    }
+
+    public void LadderInteract(GameObject ladder)
+    {
+        if (!onLadder) {
+            attachedobjectmin = ladder.transform.parent.GetChild(0).transform;
+            attachedobjectmax = ladder.transform.parent.GetChild(1).transform;
+            transform.position = new Vector3(attachedobjectmax.position.x, transform.position.y, attachedobjectmax.position.z);
+            transform.forward = attachedobjectmax.forward;
+            onLadder = true;
+        }
+        else
+        {
+            onLadder = false;
+        }
+        
+    }
+
+    public void Interact()
+    {
+        if (onLadder)
+        {
+            onLadder = false;
+            return;
+        }
+        if (holdingSomething)
+        {
+            helditem.pickUp(this.gameObject);
+            holdingSomething = false;
+            return;
+        }
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
+        Transform nearest = null;
+        float nearDist = 9999;
+        for(int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].gameObject.name != this.name && hitColliders[i].GetComponent<Interactable>() != null)
+            {
+                float thisDist = (transform.position - hitColliders[i].transform.position).sqrMagnitude;
+                if (thisDist < nearDist)
+                {
+                    nearDist = thisDist;
+                    nearest = hitColliders[i].transform;
+                }
+            }
+        }
+        if(nearest != null)
+        {
+            Interactable inter = nearest.GetComponent<Interactable>();
+            switch (inter.interacttype)
+            {
+                case "pickup":
+                    holdingSomething = true;
+                    helditem = inter;
+                    inter.pickUp(this.gameObject);
+                    break;
+                case "ladder":
+                    LadderInteract(inter.gameObject);
+                    break;
+            }
+        }
     }
     Vector3 camRelative(Vector3 vec)
     {
