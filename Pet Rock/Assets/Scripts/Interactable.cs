@@ -19,6 +19,8 @@ public class Interactable : MonoBehaviour
         if (pickedup)
         {
             this.transform.position = pickupparent.transform.position + pickupparent.transform.forward * 2;
+            this.GetComponent<CharControl>().resetVelocity();
+            this.transform.forward = pickupparent.transform.forward;
         }
     }
 
@@ -29,15 +31,7 @@ public class Interactable : MonoBehaviour
 
     public void pickUp(GameObject player)
     {
-        if (!pickedup)
-        {
-            pickedup = true;
-            pickupparent = player;
-        }
-        else
-        {
-            pickedup = false;
-            pickupparent = null;
-        }
+        pickedup = !pickedup;
+        pickupparent = player;
     }
 }
