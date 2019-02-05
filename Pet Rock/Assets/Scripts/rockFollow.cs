@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rockFollow : MonoBehaviour {
+public class RockFollow : MonoBehaviour {
     public Transform player;
     public float speed = 4f;
     public float followDistance = 3f;
