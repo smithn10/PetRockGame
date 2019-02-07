@@ -426,11 +426,21 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1895982153}
+    - target: {fileID: 493205620527385693, guid: 719482979aa4f0946a0a95b01fb6be41,
+        type: 3}
+      propertyPath: aerialDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 493205620553586617, guid: 719482979aa4f0946a0a95b01fb6be41,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 1895982153}
+    - target: {fileID: 493205620553586617, guid: 719482979aa4f0946a0a95b01fb6be41,
+        type: 3}
+      propertyPath: aerialDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719482979aa4f0946a0a95b01fb6be41, type: 3}
 --- !u!1001 &8503512239291653992

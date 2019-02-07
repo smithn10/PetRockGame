@@ -9,10 +9,11 @@ public class CharControl : MonoBehaviour
     public float maxspeed = 5;
     public float jumpheight = 0.5f;
     public float gravity = -1;
+    public float aerialDrag = .2f;
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
     private bool jumpbool = false;
-    private Vector2 velocity = new Vector3(0, 0, 0);
+    private Vector3 velocity = new Vector3(0, 0, 0);
     private CharacterController control;
     public float interactDistance = 1;
 
@@ -21,6 +22,7 @@ public class CharControl : MonoBehaviour
     private bool onLadder = false;
     private bool holdingSomething = false;
     private Interactable helditem;
+    public float throwPower = .05f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,11 @@ public class CharControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 ad = new Vector2(velocity.x, velocity.z);
+        Vector2 adnorm = ad.normalized;
+        float newx = Mathf.Sign(velocity.x) * Mathf.Max(0, Mathf.Abs(velocity.x) - Mathf.Abs(adnorm.x)*Time.deltaTime * aerialDrag);
+        float newz = Mathf.Sign(velocity.z) * Mathf.Max(0, Mathf.Abs(velocity.z) - Mathf.Abs(adnorm.y)*Time.deltaTime * aerialDrag);
+        velocity = new Vector3(newx, velocity.y, newz);
         if (onLadder)
         {
             velocity = new Vector3(0, 0, 0);
@@ -78,7 +85,14 @@ public class CharControl : MonoBehaviour
         }
         
     }
-
+    public void resetVelocity()
+    {
+        velocity = new Vector3(0, 0, 0);
+    }
+    public void VelocityImpulse(Vector3 vector)
+    {
+        velocity += vector;
+    }
     public void Interact()
     {
         if (onLadder)
@@ -90,6 +104,11 @@ public class CharControl : MonoBehaviour
         {
             helditem.pickUp(this.gameObject);
             holdingSomething = false;
+            if (!control.isGrounded)
+            {
+                helditem.GetComponent<CharControl>().Jump();
+                helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward*throwPower);
+            }
             return;
         }
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
