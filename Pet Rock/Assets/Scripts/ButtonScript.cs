@@ -16,7 +16,6 @@ public class ButtonScript : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
         if (col.gameObject == rock) {
             speed = 2f;
-            //cam.SendMessage("FocusPlayer");
             rock.SendMessage("DisableFollow");
         }
     }

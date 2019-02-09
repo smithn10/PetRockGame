@@ -7,7 +7,9 @@ public class InputManager : MonoBehaviour
     CharControl currChar;
     public GameObject player1;
     public GameObject player2;
+    public bool lockMovement;
     int currIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lockMovement) { return; } // dont allow the player to move if the movement is locked
+
         currChar.SetInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetButtonDown("Jump"));
         if (Input.GetButtonDown("ChangeChar"))
             changeChar();

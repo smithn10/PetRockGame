@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour {
     public Transform playerTransform;
     public Transform rockTransform;
     private Vector3 cameraOffset;
+    public bool lockOrbit;
     public float orbitSpeed;
     public float verticalSpeed;
     [Range(0.01f, 1.00f)]
@@ -18,6 +19,8 @@ public class CameraFollow : MonoBehaviour {
     }
 
     void Update() {
+        if(lockOrbit) { return; } // don't allow camera to orbit if player is in conversation
+
         // follow player by camera offset
         Vector3 positionUpdate = currentTransform.position + cameraOffset;
         transform.position = Vector3.Slerp(transform.position, positionUpdate, smoothness);
@@ -27,12 +30,12 @@ public class CameraFollow : MonoBehaviour {
         Quaternion turnCameraAngle = Quaternion.AngleAxis(scrollMovement, Vector3.up);
         cameraOffset = turnCameraAngle * cameraOffset;
 
+        // allow camera to orbit vertically
         float verticalScroll = Input.GetAxis("Mouse Y") * Time.deltaTime * verticalSpeed;
         Quaternion verticalCameraAngle = Quaternion.AngleAxis(-verticalScroll, Vector3.back);
         cameraOffset = verticalCameraAngle * cameraOffset;
         if(cameraOffset.y < 0) { cameraOffset.y = 0; }
         if(cameraOffset.y > 180) { cameraOffset.y = 180; }
-
 
         // set player's Y rotation to the camera's Y rotation
         float cameraRotationY = transform.eulerAngles.y;
