@@ -49,9 +49,11 @@ public class CharControl : MonoBehaviour
                 transform.position += transform.forward/4;
             }
             if (transform.position.y < attachedobjectmin.position.y)
+            {
                 onLadder = false;
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
-                transform.position -= transform.forward / 4;
+                transform.position -= transform.forward/4;
+            }
         }
         else
         {
