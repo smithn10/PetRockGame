@@ -43,9 +43,15 @@ public class CharControl : MonoBehaviour
             velocity = new Vector3(0, 0, 0);
             control.Move(new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed);
             if (transform.position.y > attachedobjectmax.position.y)
+            {
+                onLadder = false;
                 transform.position = new Vector3(transform.position.x, attachedobjectmax.position.y, transform.position.z);
+                transform.position += transform.forward/4;
+            }
             if (transform.position.y < attachedobjectmin.position.y)
+                onLadder = false;
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
+                transform.position -= transform.forward / 4;
         }
         else
         {
@@ -76,6 +82,10 @@ public class CharControl : MonoBehaviour
             attachedobjectmin = ladder.transform.parent.GetChild(0).transform;
             attachedobjectmax = ladder.transform.parent.GetChild(1).transform;
             transform.position = new Vector3(attachedobjectmax.position.x, transform.position.y, attachedobjectmax.position.z);
+            if (transform.position.y > attachedobjectmax.position.y)
+                transform.position = new Vector3(transform.position.x, attachedobjectmax.position.y, transform.position.z);
+            if (transform.position.y < attachedobjectmin.position.y)
+                transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
             transform.forward = attachedobjectmax.forward;
             onLadder = true;
         }
