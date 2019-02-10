@@ -64,21 +64,21 @@ public class CharControl : MonoBehaviour
             movevec = camRelative(movevec);
             control.Move(movevec * Time.deltaTime * maxspeed);
             control.Move(velocity);
-            if (movevec != Vector3.zero)
-                transform.forward = movevec;
+            if (movevec.magnitude > 0.2)
+                transform.forward = Vector3.RotateTowards(transform.forward, movevec, 7*Time.deltaTime, 0);
             if (jumpbool && control.isGrounded)
                 Jump();
             movevec = new Vector3(0, 0, 0);
             jumpbool = false;
         }
     }
-
+    //public method for recieveing input from inputhandler
     public void SetInput(float horizontal, float vertical, bool jumping)
     {
         movevec = new Vector3(horizontal, 0, vertical);
         jumpbool = jumping;
     }
-
+    //dont think this needs to be public
     public void LadderInteract(GameObject ladder)
     {
         if (!onLadder) {
@@ -99,10 +99,12 @@ public class CharControl : MonoBehaviour
         }
         
     }
+    //unused
     public void resetVelocity()
     {
         velocity = new Vector3(0, 0, 0);
     }
+    //used for applying force as a physics object(throwing)
     public void VelocityImpulse(Vector3 vector)
     {
         velocity += vector;
@@ -167,5 +169,15 @@ public class CharControl : MonoBehaviour
     void MoveInstant(Vector3 vec)
     {
         transform.Translate(vec);
+    }
+    //squish bug when vertical velocity above some point, requires proper tags
+    void OnControllerColliderHit(ControllerColliderHit col)
+    {
+        if (gameObject.tag == "Rock" && velocity.y < -.02f)
+            Debug.Log(velocity.y);
+        if (velocity.y < -.2 && gameObject.tag == "Rock" && col.gameObject.tag == "Enemy")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }
