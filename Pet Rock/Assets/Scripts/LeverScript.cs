@@ -29,7 +29,7 @@ public class LeverScript : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider col) {
-        if (col.name == "Player") { // player collided with object
+        if (col.name == "Character") { // player collided with object
             inRange = true; // update in range when entering lever trigger range
         }
     }
