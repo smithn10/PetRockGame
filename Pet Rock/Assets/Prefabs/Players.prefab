@@ -110,8 +110,10 @@ MonoBehaviour:
   maxspeed: 5
   jumpheight: 0.5
   gravity: -1
+  aerialDrag: 0.2
   cam: {fileID: 0}
   interactDistance: 1
+  throwPower: 0.15
 --- !u!143 &493205620527385694
 CharacterController:
   m_ObjectHideFlags: 0
@@ -241,8 +243,10 @@ MonoBehaviour:
   maxspeed: 5
   jumpheight: 0.5
   gravity: -1
+  aerialDrag: 0.2
   cam: {fileID: 0}
   interactDistance: 1
+  throwPower: 0.15
 --- !u!143 &493205620553586618
 CharacterController:
   m_ObjectHideFlags: 0
@@ -321,3 +325,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 493205620527385695}
   player2: {fileID: 493205620553586500}
+  lockMovement: 0
