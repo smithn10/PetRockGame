@@ -6,7 +6,6 @@ public class LeverScript : MonoBehaviour {
     public GameObject player;
     public GameObject cam;
     public GameObject[] children;
-    private float speed = 0f;
     private bool inRange = false;
     private bool leverActive = false;
 
@@ -33,7 +32,6 @@ public class LeverScript : MonoBehaviour {
         if (col.name == "Player") { // player collided with object
             inRange = true; // update in range when entering lever trigger range
         }
-        Debug.Log("COLLISION");
     }
 
     void OnTriggerExit(Collider col) {

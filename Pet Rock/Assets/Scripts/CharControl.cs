@@ -16,6 +16,7 @@ public class CharControl : MonoBehaviour
     private Vector3 velocity = new Vector3(0, 0, 0);
     private CharacterController control;
     public float interactDistance = 1;
+    public GameObject rock;
 
     private Transform attachedobjectmin;
     private Transform attachedobjectmax;
@@ -90,6 +91,7 @@ public class CharControl : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
             transform.forward = attachedobjectmax.forward;
             onLadder = true;
+            rock.SendMessage("DisableFollow");
         }
         else
         {

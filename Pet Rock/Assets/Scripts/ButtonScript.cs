@@ -7,16 +7,16 @@ public class ButtonScript : MonoBehaviour {
     public GameObject player;
     public GameObject cam;
     public GameObject connectionObject;
-    public GameObject connector;
+    public int ticks;
+    public int i = 0;
     public float speed = 0f;
     private bool onButton = false;
-    private bool reachedDestination = false;
 
     void Update() {
         if (onButton) {
-            //reachedDestination = connectionObject.GetComponent<Collider>().IsTouching
-            while (!reachedDestination) {
+            if (i < ticks) {
                 connectionObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                i++;
             }
             
         }
