@@ -17,6 +17,7 @@ public class CharControl : MonoBehaviour
     private CharacterController control;
     public float interactDistance = 1;
     public GameObject rock;
+    public GameObject gameManager;
 
     private Transform attachedobjectmin;
     private Transform attachedobjectmax;
@@ -55,6 +56,7 @@ public class CharControl : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
                 transform.position -= transform.forward/4;
             }
+            rock.SendMessage("DisableFollow");
         }
         else
         {
@@ -125,6 +127,7 @@ public class CharControl : MonoBehaviour
                 helditem.GetComponent<CharControl>().Jump();
                 helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward*throwPower);
             }
+            rock.SendMessage("DisableFollow");
             return;
         }
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
@@ -178,6 +181,7 @@ public class CharControl : MonoBehaviour
         if (velocity.y < -.2 && gameObject.tag == "Rock" && col.gameObject.tag == "Enemy")
         {
             Destroy(col.gameObject);
+            gameManager.SendMessage("DecreaseCount");
         }
     }
 }

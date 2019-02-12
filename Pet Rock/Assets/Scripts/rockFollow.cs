@@ -8,22 +8,25 @@ public class RockFollow : MonoBehaviour {
     public float speed = 4f;
     public float followDistance = 3f;
     public bool followEnable = true;
+    public bool canMove = false;
     private float currentDistanceAway;
     private bool isPlayer = true;
 
     void Update() {
-        currentDistanceAway = Vector3.Distance(player.transform.position, transform.position);
-        isPlayer = (cam.GetComponent<CameraFollow>().currentTransform == player);
+        if (canMove) {
+            currentDistanceAway = Vector3.Distance(player.transform.position, transform.position);
+            isPlayer = (cam.GetComponent<CameraFollow>().currentTransform == player);
 
-        if ((currentDistanceAway > followDistance) && (followEnable)) {
-            transform.LookAt(player);
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        } else if ((currentDistanceAway <= followDistance) && (!followEnable) && (isPlayer))  {
-            EnableFollow();
-        }
+            if ((currentDistanceAway > followDistance) && (followEnable)) {
+                transform.LookAt(player);
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            } else if ((currentDistanceAway <= followDistance) && (!followEnable) && (isPlayer)) {
+                EnableFollow();
+            }
 
-        if((followEnable) && (!isPlayer)) {
-            DisableFollow();
+            if ((followEnable) && (!isPlayer)) {
+                DisableFollow();
+            }
         }
     }
 
@@ -32,4 +35,7 @@ public class RockFollow : MonoBehaviour {
 
     // enable the rock's ai follow
     void EnableFollow() { followEnable = true; }
+
+    // give rock the ability to move
+    void AddMovement() { canMove = true; }
 }

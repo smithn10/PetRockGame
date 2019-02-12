@@ -6,6 +6,7 @@ public class LeverScript : MonoBehaviour {
     public GameObject player;
     public GameObject cam;
     public GameObject[] children;
+    public GameObject activeState;
     private bool inRange = false;
     private bool leverActive = false;
 
@@ -16,12 +17,20 @@ public class LeverScript : MonoBehaviour {
                     children[i].GetComponent<Collider>().enabled = true;
                     children[i].GetComponent<MeshRenderer>().enabled = true;
                 }
+                activeState.GetComponent<Collider>().enabled = true;
+                activeState.GetComponent<MeshRenderer>().enabled = true;
+                GetComponent<Collider>().enabled = false;
+                GetComponent<MeshRenderer>().enabled = false;
                 leverActive = true;
             } else if ((Input.GetKeyDown(KeyCode.E)) && (leverActive)) { // interact button was pressed when lever was active
                 for(int i=0; i<children.Length; i++) {
                     children[i].GetComponent<Collider>().enabled = false;
                     children[i].GetComponent<MeshRenderer>().enabled = false;
                 }
+                activeState.GetComponent<Collider>().enabled = false;
+                activeState.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<Collider>().enabled = true;
+                gameObject.GetComponent<MeshRenderer>().enabled = true;
                 leverActive = false;
             }
         }

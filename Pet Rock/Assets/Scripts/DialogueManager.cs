@@ -40,6 +40,10 @@ public class DialogueManager : MonoBehaviour {
             currLineIndex++;
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            currLineIndex = maxLineIndex + 1;
+        }
+
         if(currLineIndex > maxLineIndex) { // if the dialogue is over then take the text box away
             DisableTextBox();
         }
