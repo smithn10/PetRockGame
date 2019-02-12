@@ -177,7 +177,7 @@ public class CharControl : MonoBehaviour
             Debug.Log(velocity.y);
         if (velocity.y < -.2 && gameObject.tag == "Rock" && col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject);
+            Destroy(col.transform.parent.gameObject);
         }
     }
 }
