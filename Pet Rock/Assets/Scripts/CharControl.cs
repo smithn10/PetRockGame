@@ -74,11 +74,10 @@ public class CharControl : MonoBehaviour
             jumpbool = false;
         }
         if(gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
-        {
+        { // smash attack
             helditem.pickUp(this.gameObject);
             holdingSomething = false;
             rock.SendMessage("Jump");
-            Debug.Log("yup");
         }
     }
     //public method for recieveing input from inputhandler
