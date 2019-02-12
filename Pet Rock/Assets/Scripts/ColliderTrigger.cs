@@ -9,7 +9,6 @@ public class ColliderTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if(other.gameObject == player) {
-            Debug.Log("HERE");
             for (int i = 0; i < objects.Length; i++) {
                 objects[i].GetComponent<ActivateConversation>().enabled = true;
             }

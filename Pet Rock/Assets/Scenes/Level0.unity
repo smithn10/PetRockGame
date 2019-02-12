@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a7fc5c7c35aee4299fae725d19e607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: 5a6fbf1f99eafcc49bfc369042c09036, type: 3}
+  file: {fileID: 4900000, guid: 0b5d7f99ad47b494199cf567ae4f0574, type: 3}
   gameManager: {fileID: 1692853515}
   cam: {fileID: 128561533}
   interactable: 0
@@ -1493,6 +1493,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1932096921}
+    - target: {fileID: 350560603, guid: 4e146bbe26f5399469f616c09c539897, type: 3}
+      propertyPath: jumpheight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 350560600, guid: 4e146bbe26f5399469f616c09c539897, type: 3}
       propertyPath: cam
       value: 

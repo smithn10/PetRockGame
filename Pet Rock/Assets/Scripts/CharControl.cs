@@ -73,6 +73,13 @@ public class CharControl : MonoBehaviour
             movevec = new Vector3(0, 0, 0);
             jumpbool = false;
         }
+        if(gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
+        {
+            helditem.pickUp(this.gameObject);
+            holdingSomething = false;
+            rock.SendMessage("Jump");
+            Debug.Log("yup");
+        }
     }
     //public method for recieveing input from inputhandler
     public void SetInput(float horizontal, float vertical, bool jumping)
@@ -177,7 +184,7 @@ public class CharControl : MonoBehaviour
     void OnControllerColliderHit(ControllerColliderHit col)
     {
         if (gameObject.tag == "Rock" && velocity.y < -.02f)
-            Debug.Log(velocity.y);
+            //Debug.Log(velocity.y);
         if (velocity.y < -.2 && gameObject.tag == "Rock" && col.gameObject.tag == "Enemy")
         {
             Destroy(col.gameObject);
