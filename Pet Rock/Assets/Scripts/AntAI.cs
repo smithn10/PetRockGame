@@ -7,6 +7,7 @@ public class AntAI : MonoBehaviour
     private Animator anim;
     private Transform path;
     private int currpath = 0;
+    public float movespeed = .15f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class AntAI : MonoBehaviour
         }
         Vector3 movevec = path.GetChild(currpath).position - transform.position;
         movevec = movevec.normalized;
-        transform.position += movevec * Time.deltaTime *.15f;
+        transform.position += movevec * Time.deltaTime *movespeed;
         transform.forward = Vector3.RotateTowards(transform.forward, movevec, 7 * Time.deltaTime, 0);
     }
 
