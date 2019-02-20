@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour {
                 activePlayer = false;
             } else { // switch to player
                 cam.SendMessage("FocusPlayer");
-                rock.SendMessage("EnableFollow");
                 activePlayer = true;
             }
         }

@@ -20,9 +20,9 @@ public class RockFollow : MonoBehaviour {
             if ((currentDistanceAway > followDistance) && (followEnable)) {
                 transform.LookAt(player);
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            } else if ((currentDistanceAway <= followDistance) && (!followEnable) && (isPlayer)) {
+            }/* else if ((currentDistanceAway <= followDistance) && (!followEnable) && (isPlayer)) {
                 EnableFollow();
-            }
+            }*/
 
             if ((followEnable) && (!isPlayer)) {
                 DisableFollow();
