@@ -1,3 +1,0 @@
-Ant: Hello there!
-Ant: My name is Mr. Ant :D
-Ant: This definitely is working, so goodbye but try talking to me again.

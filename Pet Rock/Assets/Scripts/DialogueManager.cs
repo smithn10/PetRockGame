@@ -36,8 +36,12 @@ public class DialogueManager : MonoBehaviour {
 
         textInBox.text = lines[currLineIndex]; // update the text in the box
 
-        if(Input.GetKeyDown(KeyCode.Return)) { // allow the player to go through the text lines on key press
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown(0)) { // allow the player to go through the text lines on key press
             currLineIndex++;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            currLineIndex = maxLineIndex + 1;
         }
 
         if(currLineIndex > maxLineIndex) { // if the dialogue is over then take the text box away

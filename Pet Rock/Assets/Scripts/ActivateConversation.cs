@@ -30,7 +30,7 @@ public class ActivateConversation : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider col) { 
-        if(col.name == "Player") { // player collided with object
+        if(col.name == "Character") { // player collided with object
             if(interactable) { // interactable so update in range
                 inRange = true; // update in range when entering an NPCs trigger range
             } else { // not interactable so automatically enable text box and dialogue

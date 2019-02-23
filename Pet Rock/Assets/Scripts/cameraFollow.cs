@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour {
     public float verticalSpeed;
     [Range(0.01f, 1.00f)]
     public float smoothness;
-    private Transform currentTransform;
+    public Transform currentTransform;
 
     void Start() {
         currentTransform = playerTransform; // initialize to player at start

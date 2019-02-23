@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour
     {
         if (pickedup)
         {
-            this.transform.position = pickupparent.transform.position + pickupparent.transform.forward * 2;
+            this.transform.position = pickupparent.transform.position + pickupparent.transform.forward * 1.2f;
             this.GetComponent<CharControl>().resetVelocity();
             this.transform.forward = pickupparent.transform.forward;
         }

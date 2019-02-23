@@ -2,23 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonScript : MonoBehaviour {
+public class ButtonMeshEnableScript : MonoBehaviour {
     public GameObject rock;
-    public GameObject player;
     public GameObject cam;
-    public GameObject connectionObject;
-    public int ticks;
-    public int i = 0;
-    public float speed = 0f;
+    public GameObject[] children;
     private bool onButton = false;
+    private bool activated = false;
 
     void Update() {
-        if (onButton) {
-            if (i < ticks) {
-                connectionObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                i++;
+        if ((onButton) && (!activated)) {
+            for (int i = 0; i < children.Length; i++) {
+                children[i].GetComponent<Collider>().enabled = true;
+                children[i].GetComponent<MeshRenderer>().enabled = true;
             }
-            
+            activated = true;
         }
     }
 
@@ -31,7 +28,6 @@ public class ButtonScript : MonoBehaviour {
 
     void OnTriggerExit(Collider col) {
         if (col.gameObject == rock) {
-            onButton = false;
             rock.SendMessage("EnableFollow");
         }
     }
