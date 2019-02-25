@@ -16,7 +16,7 @@ public class LeverScript : MonoBehaviour {
             target.SetActive(!target.activeSelf);
             activeState.SetActive(!activeState.activeSelf);
             gameObject.SetActive(!gameObject.activeSelf);
-            leverActive = true;
+            leverActive = !leverActive;
         }
     }
 

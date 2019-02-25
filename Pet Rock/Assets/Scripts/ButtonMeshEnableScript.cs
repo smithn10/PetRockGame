@@ -5,16 +5,14 @@ using UnityEngine;
 public class ButtonMeshEnableScript : MonoBehaviour {
     public GameObject rock;
     public GameObject cam;
-    public GameObject[] children;
+    public GameObject target;
     private bool onButton = false;
     private bool activated = false;
 
     void Update() {
         if ((onButton) && (!activated)) {
-            for (int i = 0; i < children.Length; i++) {
-                children[i].GetComponent<Collider>().enabled = true;
-                children[i].GetComponent<MeshRenderer>().enabled = true;
-            }
+            target.SetActive(!target.activeSelf);
+            gameObject.SetActive(!gameObject.activeSelf);
             activated = true;
         }
     }
