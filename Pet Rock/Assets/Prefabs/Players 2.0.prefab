@@ -95,13 +95,12 @@ MonoBehaviour:
   accel: 48
   decel: 24
   maxspeed: 7
-  jumpheight: 20
+  jumpheight: 30
   gravity: -30
   cam: {fileID: 0}
   interactDistance: 2
   rock: {fileID: 6821174654058212366}
   gameManager: {fileID: 0}
-  searchfactor: 0.1
   throwPower: 20
 --- !u!54 &6821174654564302948
 Rigidbody:
@@ -229,13 +228,12 @@ MonoBehaviour:
   accel: 48
   decel: 24
   maxspeed: 7
-  jumpheight: 10
+  jumpheight: 15
   gravity: -30
   cam: {fileID: 0}
   interactDistance: 1
   rock: {fileID: 0}
   gameManager: {fileID: 0}
-  searchfactor: 0.1
   throwPower: 20
 --- !u!54 &6821174654058212355
 Rigidbody:
@@ -291,7 +289,7 @@ GameObject:
   - component: {fileID: 6821174654868928170}
   - component: {fileID: 6821174654868928171}
   m_Layer: 0
-  m_Name: Players 1
+  m_Name: Players 2.0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
