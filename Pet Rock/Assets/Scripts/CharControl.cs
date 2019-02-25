@@ -78,7 +78,8 @@ public class CharControl : MonoBehaviour
                 transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
 
             //jumping
-            Collider[] hitColliders = Physics.OverlapSphere(this.transform.position + Vector3.down*(Time.deltaTime+.2f), .3f);
+            Vector3 bottomSphere = this.transform.position - new Vector3(0, (this.transform.lossyScale.y) / 2 - .2f, 0);
+            Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + Vector3.down*(Time.deltaTime+.2f), .3f);
             int x = 0;
             for (int i = 0; i < hitColliders.Length; i++)
             {
@@ -215,7 +216,8 @@ public class CharControl : MonoBehaviour
     }
     private void CheckSquish()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position + control.velocity * Time.deltaTime * 2, .5f);
+        Vector3 bottomSphere = this.transform.position - new Vector3(0, (this.transform.lossyScale.y) / 2 - .5f, 0);
+        Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + control.velocity * Time.deltaTime * 2, .5f);
         for (int i = 0; i < hitColliders.Length; i++)
         {
             if (gameObject.tag == "Rock" && control.velocity.y < -5 && hitColliders[i].tag == "Enemy")
@@ -230,6 +232,7 @@ public class CharControl : MonoBehaviour
     void OnDrawGizmos()
     {
         //draw where it will be (about) next frame
-        Gizmos.DrawWireSphere(this.transform.position + control.velocity * Time.deltaTime * 2, .5f);
+        Vector3 bottomSphere = this.transform.position - new Vector3(0, (this.transform.lossyScale.y) / 2 - .5f, 0);
+        Gizmos.DrawWireSphere(this.transform.position - new Vector3(0, (this.transform.lossyScale.y) / 2 - .5f, 0) + control.velocity * Time.deltaTime * 2, .5f);
     }
 }

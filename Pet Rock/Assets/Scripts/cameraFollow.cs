@@ -39,7 +39,6 @@ public class CameraFollow : MonoBehaviour {
 
         // set player's Y rotation to the camera's Y rotation
         float cameraRotationY = transform.eulerAngles.y;
-        currentTransform.eulerAngles = new Vector3(0f, cameraRotationY, 0f);
         transform.LookAt(currentTransform);
     }
 
