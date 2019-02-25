@@ -9,12 +9,10 @@ public class CharControl : MonoBehaviour
     public float maxspeed = 5;
     public float jumpheight = 0.5f;
     public float gravity = -1;
-    public float aerialDrag = .2f;
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
     private bool jumpbool = false;
-    private Vector3 velocity = new Vector3(0, 0, 0);
-    private CharacterController control;
+    private Rigidbody control;
     public float interactDistance = 1;
     public GameObject rock;
     public GameObject gameManager;
@@ -25,71 +23,107 @@ public class CharControl : MonoBehaviour
     private bool holdingSomething = false;
     private Interactable helditem;
     public float throwPower = .05f;
+    private float lastvy = 0;
+    private bool grounded = false;
     // Start is called before the first frame update
     void Start()
     {
-        control = transform.GetComponent<CharacterController>();
+        control = transform.GetComponent<Rigidbody>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 ad = new Vector2(velocity.x, velocity.z);
-        Vector2 adnorm = ad.normalized;
-        float newx = Mathf.Sign(velocity.x) * Mathf.Max(0, Mathf.Abs(velocity.x) - Mathf.Abs(adnorm.x)*Time.deltaTime * aerialDrag);
-        float newz = Mathf.Sign(velocity.z) * Mathf.Max(0, Mathf.Abs(velocity.z) - Mathf.Abs(adnorm.y)*Time.deltaTime * aerialDrag);
-        velocity = new Vector3(newx, velocity.y, newz);
         if (onLadder)
         {
-            velocity = new Vector3(0, 0, 0);
-            control.Move(new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed);
+            control.velocity = new Vector3(0, 0, 0);
+            transform.position += new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed;
             if (transform.position.y > attachedobjectmax.position.y)
             {
                 onLadder = false;
                 transform.position = new Vector3(transform.position.x, attachedobjectmax.position.y, transform.position.z);
-                transform.position += transform.forward/4;
+                transform.position += transform.forward / 4;
             }
             if (transform.position.y < attachedobjectmin.position.y)
             {
                 onLadder = false;
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
-                transform.position -= transform.forward/4;
+                transform.position -= transform.forward / 4;
             }
             rock.SendMessage("DisableFollow");
         }
         else
         {
-            if (control.isGrounded && velocity.y < 0)
-                velocity.y = 0;
-            velocity.y += gravity * Time.deltaTime;
-            movevec = camRelative(movevec);
-            control.Move(movevec * Time.deltaTime * maxspeed);
-            control.Move(velocity);
-            if (movevec.magnitude > 0.2)
-                transform.forward = Vector3.RotateTowards(transform.forward, movevec, 7*Time.deltaTime, 0);
-            if (jumpbool && control.isGrounded)
+            control.velocity += new Vector3(0, gravity * Time.deltaTime, 0);
+            Vector3 forward = control.velocity;
+            forward.y = 0;
+            //decelleration
+            if (forward.magnitude > 0)
+            {
+                float changemag = Mathf.Max(0, forward.magnitude - decel * Time.deltaTime) / forward.magnitude;
+                control.velocity = new Vector3(control.velocity.x * changemag, control.velocity.y, control.velocity.z * changemag);
+            }
+            //acceleration
+            if (forward.magnitude < .1)
+            {
+                control.velocity = new Vector3(movevec.x * .5f, control.velocity.y, movevec.z * .5f);
+            }
+            else
+            {
+                control.velocity += (movevec * accel * Time.deltaTime);
+            }
+
+            if (forward.magnitude > 0.2)
+                transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
+
+            //jumping
+            Collider[] hitColliders = Physics.OverlapSphere(this.transform.position + Vector3.down*(Time.deltaTime+.2f), .3f);
+            int x = 0;
+            for (int i = 0; i < hitColliders.Length; i++)
+            {
+                if (!hitColliders[i].isTrigger)
+                {
+                    x++;
+                }
+            }
+            grounded = false;
+            if (x > 1)
+                grounded = true;
+            if (grounded && jumpbool)
                 Jump();
-            movevec = new Vector3(0, 0, 0);
             jumpbool = false;
+
+            //limiting speed
+            if (forward.magnitude > maxspeed)
+            {
+                forward *= (maxspeed / forward.magnitude);
+                control.velocity = new Vector3(forward.x, control.velocity.y, forward.z);
+            }
+            movevec = new Vector3(0, 0, 0);
+            lastvy = control.velocity.y;
         }
-        if(gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
+        if (gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
         { // smash attack
             helditem.pickUp(this.gameObject);
             holdingSomething = false;
             rock.SendMessage("Jump");
         }
+        CheckSquish();
     }
     //public method for recieveing input from inputhandler
     public void SetInput(float horizontal, float vertical, bool jumping)
     {
         movevec = new Vector3(horizontal, 0, vertical);
+        movevec = camRelative(movevec);
+        movevec = movevec.normalized;
         jumpbool = jumping;
     }
     //dont think this needs to be public
     public void LadderInteract(GameObject ladder)
     {
-        if (!onLadder) {
+        if (!onLadder && gameObject.name == "Character")
+        {
             attachedobjectmin = ladder.transform.parent.GetChild(0).transform;
             attachedobjectmax = ladder.transform.parent.GetChild(1).transform;
             transform.position = new Vector3(attachedobjectmax.position.x, transform.position.y, attachedobjectmax.position.z);
@@ -105,17 +139,17 @@ public class CharControl : MonoBehaviour
         {
             onLadder = false;
         }
-        
+
     }
     //unused
     public void resetVelocity()
     {
-        velocity = new Vector3(0, 0, 0);
+        control.velocity = new Vector3(0, 0, 0);
     }
     //used for applying force as a physics object(throwing)
     public void VelocityImpulse(Vector3 vector)
     {
-        velocity += vector;
+        control.velocity += vector;
     }
     public void Interact()
     {
@@ -128,10 +162,10 @@ public class CharControl : MonoBehaviour
         {
             helditem.pickUp(this.gameObject);
             holdingSomething = false;
-            if (!control.isGrounded)
+            if (true)
             {
                 helditem.GetComponent<CharControl>().Jump();
-                helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward*throwPower);
+                helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward * throwPower);
             }
             rock.SendMessage("DisableFollow");
             return;
@@ -139,7 +173,7 @@ public class CharControl : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
         Transform nearest = null;
         float nearDist = 9999;
-        for(int i = 0; i < hitColliders.Length; i++)
+        for (int i = 0; i < hitColliders.Length; i++)
         {
             if (hitColliders[i].gameObject.name != this.name && hitColliders[i].GetComponent<Interactable>() != null)
             {
@@ -151,7 +185,7 @@ public class CharControl : MonoBehaviour
                 }
             }
         }
-        if(nearest != null)
+        if (nearest != null)
         {
             Interactable inter = nearest.GetComponent<Interactable>();
             switch (inter.interacttype)
@@ -173,21 +207,29 @@ public class CharControl : MonoBehaviour
     }
     void Jump()
     {
-        velocity.y += Mathf.Sqrt(jumpheight * -.2f * gravity);
+        control.velocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravity), 0);
     }
     void MoveInstant(Vector3 vec)
     {
         transform.Translate(vec);
     }
-    //squish bug when vertical velocity above some point, requires proper tags
-    void OnControllerColliderHit(ControllerColliderHit col)
+    private void CheckSquish()
     {
-        if (gameObject.tag == "Rock" && velocity.y < -.02f)
-            //Debug.Log(velocity.y);
-        if (velocity.y < -.2 && gameObject.tag == "Rock" && col.gameObject.tag == "Enemy")
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position + control.velocity * Time.deltaTime * 2, .5f);
+        for (int i = 0; i < hitColliders.Length; i++)
         {
-            Destroy(col.gameObject);
-            gameManager.SendMessage("DecreaseCount");
+            if (gameObject.tag == "Rock" && control.velocity.y < -5 && hitColliders[i].tag == "Enemy")
+            {
+                Debug.Log(control.velocity.y);
+                Debug.Log(lastvy);
+                Destroy(hitColliders[i].transform.parent.gameObject);
+                gameManager.SendMessage("DecreaseCount");
+            }
         }
+    }
+    void OnDrawGizmos()
+    {
+        //draw where it will be (about) next frame
+        Gizmos.DrawWireSphere(this.transform.position + control.velocity * Time.deltaTime * 2, .5f);
     }
 }
