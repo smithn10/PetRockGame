@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: ac4218e365646ab4893346ee4de4a549
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Center
+    100004: Center1
+    100006: Controls
+    100008: group7_pasted__pCone1
+    100010: joint22
+    100012: joint23
+    100014: joint26
+    100016: joint28
+    100018: joint29
+    100020: joint30
+    100022: joint31
+    100024: joint32
+    100026: joint33
+    100028: joint6
+    100030: joint7
+    100032: LElbow
+    100034: LKnee
+    100036: LShoulder
+    100038: LThigh
+    100040: LTop
+    100042: LWrist
+    100044: pasted__joint28
+    100046: pasted__joint29
+    100048: pasted__joint30
+    100050: pasted__joint31
+    100052: pasted__pasted__joint28
+    100054: pasted__pasted__joint29
+    100056: pasted__pasted__joint30
+    100058: pasted__pasted__joint31
+    100060: pasted__RMiddle1
+    100062: pasted__RMiddle2
+    100064: pasted__RMiddle3
+    100066: pasted__RMiddle4
+    100068: pasted__RTHumb1
+    100070: pasted__RThumb2
+    100072: pasted__RThumb3
+    100074: pasted__RThumb4
+    100076: RAnkle
+    100078: RBal
+    100080: RElbow
+    100082: RKnee
+    100084: RMiddle1
+    100086: RMiddle2
+    100088: RMiddle3
+    100090: RMiddle4
+    100092: RShoulder
+    100094: RThigh
+    100096: RTHumb1
+    100098: RThumb2
+    100100: RThumb3
+    100102: RThumb4
+    100104: RToe
+    100106: RTop
+    100108: RWrist
+    100110: Skeleton
+    100112: Spine1
+    100114: Spine2
+    100116: Spine3
+    100118: Spine4
+    400000: //RootNode
+    400002: Center
+    400004: Center1
+    400006: Controls
+    400008: group7_pasted__pCone1
+    400010: joint22
+    400012: joint23
+    400014: joint26
+    400016: joint28
+    400018: joint29
+    400020: joint30
+    400022: joint31
+    400024: joint32
+    400026: joint33
+    400028: joint6
+    400030: joint7
+    400032: LElbow
+    400034: LKnee
+    400036: LShoulder
+    400038: LThigh
+    400040: LTop
+    400042: LWrist
+    400044: pasted__joint28
+    400046: pasted__joint29
+    400048: pasted__joint30
+    400050: pasted__joint31
+    400052: pasted__pasted__joint28
+    400054: pasted__pasted__joint29
+    400056: pasted__pasted__joint30
+    400058: pasted__pasted__joint31
+    400060: pasted__RMiddle1
+    400062: pasted__RMiddle2
+    400064: pasted__RMiddle3
+    400066: pasted__RMiddle4
+    400068: pasted__RTHumb1
+    400070: pasted__RThumb2
+    400072: pasted__RThumb3
+    400074: pasted__RThumb4
+    400076: RAnkle
+    400078: RBal
+    400080: RElbow
+    400082: RKnee
+    400084: RMiddle1
+    400086: RMiddle2
+    400088: RMiddle3
+    400090: RMiddle4
+    400092: RShoulder
+    400094: RThigh
+    400096: RTHumb1
+    400098: RThumb2
+    400100: RThumb3
+    400102: RThumb4
+    400104: RToe
+    400106: RTop
+    400108: RWrist
+    400110: Skeleton
+    400112: Spine1
+    400114: Spine2
+    400116: Spine3
+    400118: Spine4
+    2100000: lambert1
+    4300000: group7_pasted__pCone1
+    9500000: //RootNode
+    13700000: group7_pasted__pCone1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
