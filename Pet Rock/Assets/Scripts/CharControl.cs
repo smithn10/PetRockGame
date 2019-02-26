@@ -98,7 +98,6 @@ public class CharControl : MonoBehaviour
             if (grounded && jumpbool)
                 Jump();
             jumpbool = false;
-            Debug.Log(gravitystore);
             if (grounded)
                 gravity = 0;
             else
@@ -232,8 +231,7 @@ public class CharControl : MonoBehaviour
         {
             if (gameObject.tag == "Rock" && control.velocity.y < -5 && hitColliders[i].tag == "Enemy")
             {
-                Debug.Log(control.velocity.y);
-                Debug.Log(lastvy);
+                Debug.Log("Enemy Hit");
                 Destroy(hitColliders[i].transform.parent.gameObject);
                 gameManager.SendMessage("DecreaseCount");
             }
@@ -241,7 +239,6 @@ public class CharControl : MonoBehaviour
     }
     void OnDrawGizmos()
     {
-        Debug.Log(this.GetComponent<CapsuleCollider>().height);
         //draw where it will be (about) next frame
         CapsuleCollider capsule = this.GetComponent<CapsuleCollider>();
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height*transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
