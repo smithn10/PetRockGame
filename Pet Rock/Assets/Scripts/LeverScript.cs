@@ -23,6 +23,7 @@ public class LeverScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col) {
         if (col.name == "Character") { // player collided with object
+            Debug.Log("TEST");
             inRange = true; // update in range when entering lever trigger range
         }
     }
