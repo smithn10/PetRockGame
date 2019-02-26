@@ -14,22 +14,18 @@ public class SwitchMovingBlocks : MonoBehaviour {
     public float cooldown = 0;
     public bool translateUp = true;
     private bool inRange = false;
-    private bool leverActive = false;
+    public bool leverActive = false;
 
     void Update() {
         if (inRange) {
             if ((Input.GetKeyDown(KeyCode.E)) && (!leverActive)) {
-                activeState.GetComponent<Collider>().enabled = true;
-                activeState.GetComponent<MeshRenderer>().enabled = true;
-                GetComponent<Collider>().enabled = false;
-                GetComponent<MeshRenderer>().enabled = false;
-                leverActive = true;
+                activeState.SetActive(!activeState.activeSelf);
+                gameObject.SetActive(!gameObject.activeSelf);
+                //leverActive = true;
             } else if ((Input.GetKeyDown(KeyCode.E)) && (leverActive)) {
-                activeState.GetComponent<Collider>().enabled = false;
-                activeState.GetComponent<MeshRenderer>().enabled = false;
-                GetComponent<Collider>().enabled = true;
-                GetComponent<MeshRenderer>().enabled = true;
-                leverActive = false;
+                activeState.SetActive(!activeState.activeSelf);
+                gameObject.SetActive(!gameObject.activeSelf);
+                //leverActive = false;
             }
         }
 
