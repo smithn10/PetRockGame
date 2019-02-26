@@ -103,6 +103,8 @@ public class CharControl : MonoBehaviour
             else
                 gravity = gravitystore;
 
+            forward = control.velocity;
+            forward.y = 0;
             //limiting speed
             if (forward.magnitude > maxspeed)
             {
