@@ -9,6 +9,7 @@ public class CharControl : MonoBehaviour
     public float maxspeed = 5;
     public float jumpheight = 0.5f;
     public float gravity = -1;
+    private float gravitystore = 0;
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
     private bool jumpbool = false;
@@ -29,6 +30,7 @@ public class CharControl : MonoBehaviour
     void Start()
     {
         control = transform.GetComponent<Rigidbody>();
+        gravitystore = gravity;
     }
 
 
@@ -96,6 +98,10 @@ public class CharControl : MonoBehaviour
             if (grounded && jumpbool)
                 Jump();
             jumpbool = false;
+            if (grounded)
+                gravity = 0;
+            else
+                gravity = gravitystore;
 
             //limiting speed
             if (forward.magnitude > maxspeed)
@@ -210,7 +216,7 @@ public class CharControl : MonoBehaviour
     }
     void Jump()
     {
-        control.velocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravity), 0);
+        control.velocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
     }
     void MoveInstant(Vector3 vec)
     {
@@ -225,8 +231,7 @@ public class CharControl : MonoBehaviour
         {
             if (gameObject.tag == "Rock" && control.velocity.y < -5 && hitColliders[i].tag == "Enemy")
             {
-                Debug.Log(control.velocity.y);
-                Debug.Log(lastvy);
+                Debug.Log("Enemy Hit");
                 Destroy(hitColliders[i].transform.parent.gameObject);
                 gameManager.SendMessage("DecreaseCount");
             }
@@ -234,7 +239,6 @@ public class CharControl : MonoBehaviour
     }
     void OnDrawGizmos()
     {
-        Debug.Log(this.GetComponent<CapsuleCollider>().height);
         //draw where it will be (about) next frame
         CapsuleCollider capsule = this.GetComponent<CapsuleCollider>();
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height*transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
