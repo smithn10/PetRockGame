@@ -43,9 +43,17 @@ public class CameraFollow : MonoBehaviour {
     }
 
     // switch camera focus to rock
-    void FocusRock() { currentTransform = rockTransform; }
+    void FocusRock()
+    {
+        currentTransform = rockTransform;
+        transform.GetComponentInParent<SmoothFollow>().UpdateTarget(rockTransform.gameObject);
+    }
 
     // switch camera focus to player
-    void FocusPlayer() { currentTransform = playerTransform; }
+    void FocusPlayer()
+    {
+        currentTransform = playerTransform;
+        transform.GetComponentInParent<SmoothFollow>().UpdateTarget(playerTransform.gameObject);
+    }
 }
 
