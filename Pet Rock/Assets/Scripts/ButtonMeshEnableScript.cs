@@ -12,7 +12,6 @@ public class ButtonMeshEnableScript : MonoBehaviour {
     void Update() {
         if ((onButton) && (!activated)) {
             target.SetActive(!target.activeSelf);
-            gameObject.SetActive(!gameObject.activeSelf);
             activated = true;
         }
     }
