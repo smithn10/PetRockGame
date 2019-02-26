@@ -9,6 +9,7 @@ public class CharControl : MonoBehaviour
     public float maxspeed = 5;
     public float jumpheight = 0.5f;
     public float gravity = -1;
+    private float gravitystore = 0;
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
     private bool jumpbool = false;
@@ -29,6 +30,7 @@ public class CharControl : MonoBehaviour
     void Start()
     {
         control = transform.GetComponent<Rigidbody>();
+        gravitystore = gravity;
     }
 
 
@@ -96,6 +98,11 @@ public class CharControl : MonoBehaviour
             if (grounded && jumpbool)
                 Jump();
             jumpbool = false;
+            Debug.Log(gravitystore);
+            if (grounded)
+                gravity = 0;
+            else
+                gravity = gravitystore;
 
             //limiting speed
             if (forward.magnitude > maxspeed)
@@ -210,7 +217,7 @@ public class CharControl : MonoBehaviour
     }
     void Jump()
     {
-        control.velocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravity), 0);
+        control.velocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
     }
     void MoveInstant(Vector3 vec)
     {
