@@ -21,11 +21,9 @@ public class SwitchMovingBlocks : MonoBehaviour {
             if ((Input.GetKeyDown(KeyCode.E)) && (!leverActive)) {
                 activeState.SetActive(!activeState.activeSelf);
                 gameObject.SetActive(!gameObject.activeSelf);
-                //leverActive = true;
             } else if ((Input.GetKeyDown(KeyCode.E)) && (leverActive)) {
                 activeState.SetActive(!activeState.activeSelf);
                 gameObject.SetActive(!gameObject.activeSelf);
-                //leverActive = false;
             }
         }
 
