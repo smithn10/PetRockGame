@@ -1,65 +1,36 @@
 fileFormatVersion: 2
-guid: 3aefd1635b0c16b49a8bbf72867bda23
+guid: 762ed1c1955d40e4898ccdcfc96ce494
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: joint1
-    100004: joint10
-    100006: joint11
-    100008: joint12
-    100010: joint13
-    100012: joint14
-    100014: joint15
-    100016: joint16
-    100018: joint17
-    100020: joint18
-    100022: joint19
-    100024: joint2
-    100026: joint3
-    100028: joint4
-    100030: joint5
-    100032: joint6
-    100034: joint7
-    100036: joint8
-    100038: joint9
-    100040: pasted__joint10
-    100042: pasted__joint11
-    100044: pasted__joint12
-    100046: pasted__joint13
-    100048: pasted__joint14
-    100050: pSphere3
-    400000: //RootNode
-    400002: joint1
-    400004: joint10
-    400006: joint11
-    400008: joint12
-    400010: joint13
-    400012: joint14
-    400014: joint15
-    400016: joint16
-    400018: joint17
-    400020: joint18
-    400022: joint19
-    400024: joint2
-    400026: joint3
-    400028: joint4
-    400030: joint5
-    400032: joint6
-    400034: joint7
-    400036: joint8
-    400038: joint9
-    400040: pasted__joint10
-    400042: pasted__joint11
-    400044: pasted__joint12
-    400046: pasted__joint13
-    400048: pasted__joint14
-    400050: pSphere3
+    100000: group
+    100002: pasted__pCylinder1
+    100004: pCube1
+    100006: pCube5
+    100008: pCylinder1
+    100010: //RootNode
+    100012: transform3
+    100014: transform4
+    100016: transform5
+    400000: group
+    400002: pasted__pCylinder1
+    400004: pCube1
+    400006: pCube5
+    400008: pCylinder1
+    400010: //RootNode
+    400012: transform3
+    400014: transform4
+    400016: transform5
     2100000: lambert1
-    4300000: pSphere3
-    9500000: //RootNode
-    13700000: pSphere3
-  externalObjects: {}
+    2300000: pCube5
+    3300000: pCube5
+    4300000: pCube5
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 94463f330baa6ea42975dce378a7b68c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -111,8 +82,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -139,7 +110,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
