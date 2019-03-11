@@ -68,13 +68,13 @@ public class CharControl : MonoBehaviour
                 forward = new Vector3(forward.x * changemag, 0, forward.z * changemag);
             }
             //acceleration 
-            if (forward.magnitude < .1)
+            if (forward.magnitude < 4*accel*Time.fixedDeltaTime)
             {
-                forward += (movevec * .5f);
+                forward += (movevec.normalized * 4 * accel * Time.fixedDeltaTime);
             }
             else
             {
-                forward += (movevec * accel * Time.fixedDeltaTime);
+                forward += (movevec.normalized * accel * Time.fixedDeltaTime);
             }
 
             if (forward.magnitude > 0.2)
