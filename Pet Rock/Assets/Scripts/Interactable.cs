@@ -35,8 +35,11 @@ public class Interactable : MonoBehaviour
         CapsuleCollider cl = transform.GetComponent<CapsuleCollider>();
         if (ch != null)
         {
-            ch.Move(new Vector3(0, 0, 0));
+            if(ch.enabled)
+                ch.Move(new Vector3(0, 0, 0));
             ch.enabled = !ch.enabled;
+            if (ch.enabled)
+                ch.Move(new Vector3(0, 0, 0));
         }
         if ( cl != null)
         {
