@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        if((Input.GetKeyDown(KeyCode.Tab)) && (!paused) && (canChangeChar)) {
+        if((Input.GetKeyDown(KeyCode.Tab)) && (!paused)) {
             if(activePlayer) { // switch to rock
                 cam.SendMessage("FocusRock");
                 inpMangr.DisableFollow();
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
             inpMangr.changeChar();
         }
 
-        if (!paused)
+        if (!paused && !(!canChangeChar && !activePlayer))
         {
             inpMangr.SendInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetButtonDown("Jump"), Input.GetButtonDown("Interact"));
         }
