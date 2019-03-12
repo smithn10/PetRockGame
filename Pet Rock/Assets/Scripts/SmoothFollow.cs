@@ -5,9 +5,8 @@ using UnityEngine;
 public class SmoothFollow : MonoBehaviour
 {
     public GameObject followTarget;
-    public float smoothTime = 1;
+    public float moveSpeed = 1;
     private Transform targetTransform;
-    private Vector3 velocity = Vector3.zero;
     // Start is called before the first frame update 
     void Start()
     {
@@ -22,6 +21,6 @@ public class SmoothFollow : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, targetTransform.position, ref velocity, smoothTime);
+        transform.position = Vector3.Lerp(transform.position, targetTransform.position, Time.deltaTime * moveSpeed);
     }
 }

@@ -13,7 +13,8 @@ public class CharControl : MonoBehaviour
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
     private bool jumpbool = false;
-    private Rigidbody control;
+    private CharacterController control;
+    private Vector3 chVelocity = new Vector3(0,0,0);
     public float interactDistance = 1;
     public GameObject rock;
     public GameObject gameManager;
@@ -29,19 +30,19 @@ public class CharControl : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
-        control = transform.GetComponent<Rigidbody>();
+        control = transform.GetComponent<CharacterController>();
         gravitystore = gravity;
         capsule = transform.GetComponent<CapsuleCollider>();
     }
 
 
-    // FixedUpdate is called once per physicsUpdate 
-    void FixedUpdate()
+    // Update is called once per frame 
+    void Update()
     {
         if (onLadder)
         {
-            control.velocity = new Vector3(0, 0, 0);
-            transform.position += new Vector3(0, movevec.z, 0) * Time.fixedDeltaTime * maxspeed;
+            chVelocity = new Vector3(0, 0, 0);
+            transform.position += new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed;
             if (transform.position.y > attachedobjectmax.position.y)
             {
                 onLadder = false;
@@ -58,32 +59,34 @@ public class CharControl : MonoBehaviour
         }
         else
         {
-            control.velocity += new Vector3(0, gravity * Time.fixedDeltaTime, 0);
-            Vector3 forward = control.velocity;
+            if(transform.tag == "Rock")
+                Debug.Log(gravity);
+            chVelocity += new Vector3(0, gravity * Time.deltaTime, 0);
+            Vector3 forward = chVelocity;
             forward.y = 0;
             //decelleration 
             if (forward.magnitude > 0)
             {
-                float changemag = Mathf.Max(0, forward.magnitude - decel * Time.fixedDeltaTime) / forward.magnitude;
+                float changemag = Mathf.Max(0, forward.magnitude - decel * Time.deltaTime) / forward.magnitude;
                 forward = new Vector3(forward.x * changemag, 0, forward.z * changemag);
             }
             //acceleration 
-            if (forward.magnitude < 4*accel*Time.fixedDeltaTime)
+            if (forward.magnitude < 4*accel*Time.deltaTime)
             {
-                forward += (movevec.normalized * 4 * accel * Time.fixedDeltaTime);
+                forward += (movevec * 4 * accel * Time.deltaTime);
             }
             else
             {
-                forward += (movevec.normalized * accel * Time.fixedDeltaTime);
+                forward += (movevec * accel * Time.deltaTime);
             }
 
             if (forward.magnitude > 0.2)
-                transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.fixedDeltaTime, 0);
+                transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
 
             //jumping, tests if the collider is grounded 
             Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height * transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
             bottomSphere += new Vector3(0, -.15f, 0);
-            Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + Vector3.down * (Time.fixedDeltaTime + .2f), capsule.radius * transform.lossyScale.y - .1f);
+            Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + Vector3.down * (Time.deltaTime + .2f), capsule.radius * transform.lossyScale.y - .1f);
             int x = 0;
             for (int i = 0; i < hitColliders.Length; i++)
                 if (!hitColliders[i].isTrigger)
@@ -91,15 +94,9 @@ public class CharControl : MonoBehaviour
             if (x > 1)
             {
                 //here if is grounded 
-                gravity = 0;
-                control.velocity = new Vector3(control.velocity.x, 0, control.velocity.z);
-                Debug.Log(control.velocity);
+                chVelocity = new Vector3(chVelocity.x, 0, chVelocity.z);
                 if (jumpbool)
                     Jump();
-            }
-            else
-            {
-                gravity = gravitystore;
             }
 
             //limiting speed 
@@ -108,9 +105,9 @@ public class CharControl : MonoBehaviour
             {
                 forward = Vector3.ClampMagnitude(forward, maxspeed);
             }
-            control.velocity = new Vector3(forward.x, control.velocity.y, forward.z);
-            movevec = new Vector3(0, 0, 0);
+            chVelocity = new Vector3(forward.x, chVelocity.y, forward.z);
             jumpbool = false;
+            control.Move(chVelocity*Time.deltaTime);
         }
         if (gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
         { // smash attack 
@@ -153,12 +150,12 @@ public class CharControl : MonoBehaviour
     //unused
     public void resetVelocity()
     {
-        control.velocity = new Vector3(0, 0, 0);
+        chVelocity = new Vector3(0, 0, 0);
     }
     //used for applying force as a physics object(throwing)
     public void VelocityImpulse(Vector3 vector)
     {
-        control.velocity += vector;
+        chVelocity += vector;
     }
     public void Interact()
     {
@@ -216,7 +213,7 @@ public class CharControl : MonoBehaviour
     }
     void Jump()
     {
-        control.velocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
+        chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
     }
     void MoveInstant(Vector3 vec)
     {
@@ -225,10 +222,10 @@ public class CharControl : MonoBehaviour
     private void CheckSquish()
     {
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height * transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
-        Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + control.velocity * Time.fixedDeltaTime * 2, capsule.radius * transform.lossyScale.y);
+        Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + chVelocity * Time.deltaTime * 2, capsule.radius * transform.lossyScale.y);
         for (int i = 0; i < hitColliders.Length; i++)
         {
-            if (gameObject.tag == "Rock" && control.velocity.y < -5 && hitColliders[i].tag == "Enemy")
+            if (gameObject.tag == "Rock" && chVelocity.y < -5 && hitColliders[i].tag == "Enemy")
             {
                 Debug.Log("Enemy Hit");
                 Destroy(hitColliders[i].transform.parent.gameObject);
@@ -241,6 +238,6 @@ public class CharControl : MonoBehaviour
         //draw where it will be (about) next frame
         CapsuleCollider capsule = this.GetComponent<CapsuleCollider>();
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height*transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
-        Gizmos.DrawWireSphere(bottomSphere + transform.GetComponent<Rigidbody>().velocity * Time.fixedDeltaTime * 2, capsule.radius*transform.lossyScale.y);
+        Gizmos.DrawWireSphere(bottomSphere + chVelocity * Time.deltaTime * 2, capsule.radius*transform.lossyScale.y);
     }
-}
+}   
