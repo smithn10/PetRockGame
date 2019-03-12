@@ -9,7 +9,7 @@ public class OutOfMap : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.gameObject == player || other.gameObject == rock) {
             //Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }
