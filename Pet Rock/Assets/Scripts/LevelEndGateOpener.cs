@@ -11,8 +11,8 @@ public class LevelEndGateOpener : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if(enemyCount <= 0) {
-            endGate.GetComponent<Collider>().enabled = true;
-            endGate.GetComponent<MeshRenderer>().enabled = true;
+            endGate.GetComponent<Collider>().enabled = false;
+            endGate.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
