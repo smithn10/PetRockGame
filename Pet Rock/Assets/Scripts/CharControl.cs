@@ -81,6 +81,7 @@ public class CharControl : MonoBehaviour
             if (forward.magnitude > 0.2)
                 transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
 
+            CheckSquish();
             //jumping, tests if the collider is grounded 
             if (control.isGrounded)
             {
@@ -107,7 +108,6 @@ public class CharControl : MonoBehaviour
             holdingSomething = false;
             rock.SendMessage("Jump");
         }
-        CheckSquish();
     }
     //public method for recieveing input from inputhandler
     public void SetInput(float horizontal, float vertical, bool jumping)
