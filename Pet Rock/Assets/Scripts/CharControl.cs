@@ -84,17 +84,10 @@ public class CharControl : MonoBehaviour
                 transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
 
             //jumping, tests if the collider is grounded 
-            Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height * transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
-            bottomSphere += new Vector3(0, -.15f, 0);
-            Collider[] hitColliders = Physics.OverlapSphere(bottomSphere + Vector3.down * (Time.deltaTime + .2f), capsule.radius * transform.lossyScale.y - .1f);
-            int x = 0;
-            for (int i = 0; i < hitColliders.Length; i++)
-                if (!hitColliders[i].isTrigger)
-                    x++;
-            if (x > 1)
+            if (control.isGrounded)
             {
                 //here if is grounded 
-                chVelocity = new Vector3(chVelocity.x, 0, chVelocity.z);
+                chVelocity = new Vector3(chVelocity.x, -.1f, chVelocity.z);
                 if (jumpbool)
                     Jump();
             }
