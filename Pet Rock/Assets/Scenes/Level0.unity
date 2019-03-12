@@ -1916,6 +1916,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3135882623465734844, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: followEnable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6821174653373054401, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_Enabled
@@ -1924,6 +1929,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6821174653373054401, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
     - {fileID: 6821174653373054400, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
+    - {fileID: 6821174654564302948, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
+    - {fileID: 6821174654058212356, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
+    - {fileID: 6821174654058212357, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
+    - {fileID: 6821174654058212355, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
 --- !u!1 &893548282 stripped
 GameObject:
@@ -1955,6 +1964,42 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 893548281}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &893548290
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893548282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.01081057
+  m_Radius: 0.005405285
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: -0.0001728034, y: 0.0009720032, z: 0}
+--- !u!143 &893548296
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893548285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.1517129
+  m_Radius: 0.02298108
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: -0.005478016, y: -0.004433902, z: 0.003574919}
 --- !u!1 &914690653
 GameObject:
   m_ObjectHideFlags: 0
