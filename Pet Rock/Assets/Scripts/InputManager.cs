@@ -19,6 +19,7 @@ public class InputManager : MonoBehaviour
     void changeChar()
     {
         currIndex++;
+        currChar.SetInput(0, 0, false);
         if (currIndex > 1)
         {
             currIndex = 0;
