@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour
         currChar = player1.GetComponent<CharControl>();
     }
     
-    void changeChar()
+    public void changeChar()
     {
         currIndex++;
         currChar.SetInput(0, 0, false);
@@ -29,14 +29,16 @@ public class InputManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void SendInput(float horizontal, float vertical, bool jump, bool interact)
     {
         if (lockMovement) { return; } // dont allow the player to move if the movement is locked
 
-        currChar.SetInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetButtonDown("Jump"));
-        if (Input.GetButtonDown("ChangeChar"))
-            changeChar();
-        if (Input.GetButtonDown("Interact"))
+        currChar.SetInput(horizontal, vertical, jump);
+        if (interact)
             currChar.Interact();
+    }
+    public void DisableFollow()
+    {
+        player2.SendMessage("DisableFollow");
     }
 }

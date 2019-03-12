@@ -40,15 +40,15 @@ public class CameraOrbit : MonoBehaviour
     }
 
     // switch camera focus to rock
-    void FocusRock()
+    public void FocusRock()
     {
         smoothingObject.GetComponent<SmoothFollow>().UpdateTarget(rockTransform.gameObject);
     }
 
     // switch camera focus to player
-    void FocusPlayer()
+    public void FocusPlayer()
     {
-        smoothingObject.GetComponent<SmoothFollow>().UpdateTarget(rockTransform.gameObject);
+        smoothingObject.GetComponent<SmoothFollow>().UpdateTarget(playerTransform.gameObject);
     }
 }
 

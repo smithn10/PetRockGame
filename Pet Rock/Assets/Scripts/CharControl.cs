@@ -98,7 +98,8 @@ public class CharControl : MonoBehaviour
             }
             chVelocity = new Vector3(forward.x, chVelocity.y, forward.z);
             jumpbool = false;
-            control.Move(chVelocity*Time.deltaTime);
+            if(control.enabled)
+                control.Move(chVelocity*Time.deltaTime);
         }
         if (gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
         { // smash attack 
