@@ -59,8 +59,6 @@ public class CharControl : MonoBehaviour
         }
         else
         {
-            if(transform.tag == "Rock")
-                Debug.Log(gravity);
             chVelocity += new Vector3(0, gravity * Time.deltaTime, 0);
             Vector3 forward = chVelocity;
             forward.y = 0;
