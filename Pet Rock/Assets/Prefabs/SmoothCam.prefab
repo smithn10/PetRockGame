@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1049423981920547956}
   - component: {fileID: 1049423981920547955}
   m_Layer: 0
-  m_Name: CamSmoother
+  m_Name: SmoothCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
-  smoothTime: 0.1
+  moveSpeed: 0.25

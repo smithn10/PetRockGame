@@ -165,7 +165,7 @@ public class CharControl : MonoBehaviour
                 helditem.GetComponent<CharControl>().Jump();
                 helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward * throwPower);
             }
-            rock.SendMessage("DisableFollow");
+            //rock.SendMessage("DisableFollow");
             return;
         }
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
