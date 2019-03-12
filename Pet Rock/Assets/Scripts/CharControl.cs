@@ -26,13 +26,13 @@ public class CharControl : MonoBehaviour
     private Interactable helditem;
     public float throwPower = .05f;
     private int i = 0;
-    private CapsuleCollider capsule;
+    private CharacterController capsule;
     // Start is called before the first frame update 
     void Start()
     {
         control = transform.GetComponent<CharacterController>();
         gravitystore = gravity;
-        capsule = transform.GetComponent<CapsuleCollider>();
+        capsule = transform.GetComponent<CharacterController>();
     }
 
 
@@ -236,7 +236,7 @@ public class CharControl : MonoBehaviour
     void OnDrawGizmos()
     {
         //draw where it will be (about) next frame
-        CapsuleCollider capsule = this.GetComponent<CapsuleCollider>();
+        CharacterController capsule = this.GetComponent<CharacterController>();
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height*transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
         Gizmos.DrawWireSphere(bottomSphere + chVelocity * Time.deltaTime * 2, capsule.radius*transform.lossyScale.y);
     }
