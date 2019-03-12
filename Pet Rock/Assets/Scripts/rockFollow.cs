@@ -15,7 +15,6 @@ public class RockFollow : MonoBehaviour {
     void Update() {
         if (canMove) {
             currentDistanceAway = Vector3.Distance(player.transform.position, transform.position);
-            isPlayer = (cam.GetComponent<CameraFollow>().currentTransform == player);
 
             if ((currentDistanceAway > followDistance) && (followEnable)) {
                 transform.LookAt(player);
@@ -23,10 +22,7 @@ public class RockFollow : MonoBehaviour {
             }/* else if ((currentDistanceAway <= followDistance) && (!followEnable) && (isPlayer)) {
                 EnableFollow();
             }*/
-
-            if ((followEnable) && (!isPlayer)) {
-                DisableFollow();
-            }
+            
         }
     }
 

@@ -14,12 +14,12 @@ public class DialogueManager : MonoBehaviour {
     public int maxLineIndex;
     public bool isEnabled;
     private InputManager inputController;
-    private CameraFollow cameraScript;
+    private CameraOrbit cameraScript;
 
 
     void Start() {
         inputController = players.GetComponent<InputManager>(); // get input manager script for movement control
-        cameraScript = cam.GetComponent<CameraFollow>(); // get camera follow script for orbit control
+        cameraScript = cam.GetComponent<CameraOrbit>(); // get camera follow script for orbit control
 
         if (file) { // make sure text file is not null
             lines = (file.text.Split('\n')); // makes lines array have each line of file
