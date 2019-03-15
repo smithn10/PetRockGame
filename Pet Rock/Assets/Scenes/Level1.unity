@@ -7573,7 +7573,7 @@ MonoBehaviour:
   player: {fileID: 478914341}
   rock: {fileID: 213330030}
   endGate: {fileID: 479039082}
-  enemyCount: 1
+  enemyCount: 7
 --- !u!1 &1595989835
 GameObject:
   m_ObjectHideFlags: 0

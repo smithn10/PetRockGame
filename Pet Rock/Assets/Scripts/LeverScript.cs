@@ -11,8 +11,7 @@ public class LeverScript : MonoBehaviour {
 
     void Update() {
         //toggle active state of stairs, lever, and other lever
-        if (inRange && Input.GetKeyDown(KeyCode.E))
-        {
+        if (inRange && Input.GetKeyDown(KeyCode.E)) {
             target.SetActive(!target.activeSelf);
             activeState.SetActive(!activeState.activeSelf);
             gameObject.SetActive(!gameObject.activeSelf);
