@@ -31,6 +31,20 @@ public class Interactable : MonoBehaviour
 
     public void pickUp(GameObject player)
     {
+        CharacterController ch = transform.GetComponent<CharacterController>();
+        CapsuleCollider cl = transform.GetComponent<CapsuleCollider>();
+        if (ch != null)
+        {
+            if(ch.enabled)
+                ch.Move(new Vector3(0, 0, 0));
+            ch.enabled = !ch.enabled;
+            if (ch.enabled)
+                ch.Move(new Vector3(0, 0, 0));
+        }
+        if ( cl != null)
+        {
+            cl.enabled = !cl.enabled;
+        }
         pickedup = !pickedup;
         pickupparent = player;
     }

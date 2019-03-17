@@ -7,6 +7,7 @@ public class SmoothFollow : MonoBehaviour
     public GameObject followTarget;
     public float moveSpeed = 1;
     private Transform targetTransform;
+    private Vector3 velocity = new Vector3(0, 0, 0);
     // Start is called before the first frame update 
     void Start()
     {
@@ -15,12 +16,13 @@ public class SmoothFollow : MonoBehaviour
 
     public void UpdateTarget(GameObject target)
     {
-        targetTransform = target.transform;
+        followTarget = target;
+        targetTransform = followTarget.transform;
     }
 
     // Update is called once per frame 
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetTransform.position, Time.deltaTime * moveSpeed);
+        transform.position = Vector3.SmoothDamp(transform.position, targetTransform.position, ref velocity, moveSpeed);
     }
 }

@@ -81,6 +81,7 @@ public class CharControl : MonoBehaviour
             if (forward.magnitude > 0.2)
                 transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
 
+            CheckSquish();
             //jumping, tests if the collider is grounded 
             if (control.isGrounded)
             {
@@ -98,7 +99,8 @@ public class CharControl : MonoBehaviour
             }
             chVelocity = new Vector3(forward.x, chVelocity.y, forward.z);
             jumpbool = false;
-            control.Move(chVelocity*Time.deltaTime);
+            if(control.enabled)
+                control.Move(chVelocity*Time.deltaTime);
         }
         if (gameObject.tag == "Player" && holdingSomething && Input.GetMouseButtonDown(0))
         { // smash attack 
@@ -106,7 +108,6 @@ public class CharControl : MonoBehaviour
             holdingSomething = false;
             rock.SendMessage("Jump");
         }
-        CheckSquish();
     }
     //public method for recieveing input from inputhandler
     public void SetInput(float horizontal, float vertical, bool jumping)
@@ -164,7 +165,7 @@ public class CharControl : MonoBehaviour
                 helditem.GetComponent<CharControl>().Jump();
                 helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward * throwPower);
             }
-            rock.SendMessage("DisableFollow");
+            //rock.SendMessage("DisableFollow");
             return;
         }
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
