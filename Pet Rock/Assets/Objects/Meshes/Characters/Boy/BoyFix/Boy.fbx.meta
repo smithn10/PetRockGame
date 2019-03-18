@@ -127,7 +127,12 @@ ModelImporter:
     4300000: group7_pasted__pCone1
     9500000: //RootNode
     13700000: group7_pasted__pCone1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 72891578c78b6364a89af7ce2e3719c1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

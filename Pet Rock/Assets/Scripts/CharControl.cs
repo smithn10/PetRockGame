@@ -43,15 +43,19 @@ public class CharControl : MonoBehaviour
         {
             chVelocity = new Vector3(0, 0, 0);
             transform.position += new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed;
+            if (movevec.z != 0) { SendMessage("Climbing", true); SendMessage("PauseAnim", false); }
+            else { SendMessage("PauseAnim", true); }
             if (transform.position.y > attachedobjectmax.position.y)
             {
                 onLadder = false;
+                SendMessage("Climbing", false);
                 transform.position = new Vector3(transform.position.x, attachedobjectmax.position.y, transform.position.z);
                 transform.position += transform.forward.normalized / 4;
             }
             if (transform.position.y < attachedobjectmin.position.y)
             {
                 onLadder = false;
+                SendMessage("Climbing", false);
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
                 transform.position -= transform.forward.normalized / 4;
             }
@@ -132,10 +136,12 @@ public class CharControl : MonoBehaviour
             transform.forward = attachedobjectmax.forward;
             onLadder = true;
             rock.SendMessage("DisableFollow");
+            //SendMessage("Climbing", true);
         }
         else
         {
             onLadder = false;
+            SendMessage("Climbing", false);
         }
 
     }
@@ -154,6 +160,7 @@ public class CharControl : MonoBehaviour
         if (onLadder)
         {
             onLadder = false;
+            SendMessage("Climbing", false);
             return;
         }
         if (holdingSomething)
