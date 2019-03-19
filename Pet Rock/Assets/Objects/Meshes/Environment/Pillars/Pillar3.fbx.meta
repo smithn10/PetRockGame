@@ -11,7 +11,12 @@ ModelImporter:
     2300000: pasted__pCylinder2
     3300000: pasted__pCylinder2
     4300000: pasted__pCylinder2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: fa087b3e66907c443ae60f2989e85230, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
