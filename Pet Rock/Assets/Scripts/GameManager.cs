@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     public GameObject inputManager;
     public GameObject cam;
-    public Animator playerAnimator;
     public bool canChangeChar = false;
     private bool activePlayer = true;
     private bool paused = false;
@@ -38,10 +37,7 @@ public class GameManager : MonoBehaviour {
             if(paused) { paused = false; }
             else { paused = true; }
         }
-
-        float forward = Mathf.Abs(Input.GetAxis("Vertical"));
-        float side = Mathf.Abs(Input.GetAxis("Horizontal"));
-        playerAnimator.SetFloat("Speed", forward+side);
+        
     }
 
     void AllowChangeChar() { canChangeChar = true; }

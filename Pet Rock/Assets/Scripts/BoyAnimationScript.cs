@@ -12,6 +12,7 @@ public class BoyAnimationScript : MonoBehaviour {
     void Falling(bool b) { playerAnimator.SetBool("isFalling", b); }
     void Landing(bool b) { playerAnimator.SetBool("isLanding", b); }
     void Jumping(bool b) { playerAnimator.SetBool("isJumping", b); }
+    void SetAnimSpeed(float s) { playerAnimator.SetFloat("Speed", s); }
     void PauseAnim(bool b) {
         if(b) { playerAnimator.enabled = false; }
         else {
