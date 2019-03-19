@@ -9,6 +9,7 @@ public class CharControl : MonoBehaviour
     public float maxspeed = 5;
     public float jumpheight = 0.5f;
     public float gravity = -1;
+    public float glideFallSpeed = -1.5f;
     private float gravitystore = 0;
     public Camera cam;
     private Vector3 movevec = new Vector3(0, 0, 0);
@@ -21,7 +22,7 @@ public class CharControl : MonoBehaviour
 
     private Transform attachedobjectmin;
     private Transform attachedobjectmax;
-    private bool onLadder = false;
+    private string state = "neutral";
     private bool holdingSomething = false;
     private Interactable helditem;
     public float throwPower = .05f;
@@ -39,7 +40,7 @@ public class CharControl : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        if (onLadder)
+        if (state == "ladder")
         {
             chVelocity = new Vector3(0, 0, 0);
             transform.position += new Vector3(0, movevec.z, 0) * Time.deltaTime * maxspeed;
@@ -47,19 +48,59 @@ public class CharControl : MonoBehaviour
             else { SendMessage("PauseAnim", true); }
             if (transform.position.y > attachedobjectmax.position.y)
             {
-                onLadder = false;
                 SendMessage("Climbing", false);
+                state = "neutral";
                 transform.position = new Vector3(transform.position.x, attachedobjectmax.position.y, transform.position.z);
                 transform.position += transform.forward.normalized / 4;
             }
             if (transform.position.y < attachedobjectmin.position.y)
             {
-                onLadder = false;
                 SendMessage("Climbing", false);
+                state = "neutral";
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
                 transform.position -= transform.forward.normalized / 4;
             }
             rock.SendMessage("DisableFollow");
+        }
+        else if (state == "gliding")
+        {
+            chVelocity = new Vector3(chVelocity.x, glideFallSpeed, chVelocity.z);
+            Vector3 forward = chVelocity;
+            forward.y = 0;
+            //decelleration 
+            if (forward.magnitude > 0)
+            {
+                float changemag = Mathf.Max(0, forward.magnitude - decel * Time.deltaTime) / forward.magnitude;
+                forward = new Vector3(forward.x * changemag, 0, forward.z * changemag);
+            }
+            //acceleration 
+            if (forward.magnitude < 4 * accel * Time.deltaTime)
+            {
+                forward += (movevec * 4 * accel * Time.deltaTime);
+            }
+            else
+            {
+                forward += (movevec * accel * Time.deltaTime);
+            }
+            if (forward.magnitude > 0.2)
+                transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
+
+            //TODO: add return to normal with jumpup
+            if (control.isGrounded || jumpbool)
+            {
+                state = "neutral";
+            }
+
+            //limiting speed 
+
+            if (forward.magnitude > maxspeed)
+            {
+                forward = Vector3.ClampMagnitude(forward, maxspeed);
+            }
+            chVelocity = new Vector3(forward.x, chVelocity.y, forward.z);
+            jumpbool = false;
+            if (control.enabled)
+                control.Move(chVelocity * Time.deltaTime);
         }
         else
         {
@@ -100,7 +141,12 @@ public class CharControl : MonoBehaviour
                     if (this.gameObject.name == "Character") { SendMessage("Landing", false); }
                     Jump();
                 }
-            } else
+            }
+            else if (jumpbool && transform.tag == "Rock")
+            {
+                state = "gliding";
+            }
+            else
             {
                 if (this.gameObject.name == "Character") { SendMessage("Landing", false); }
                 if (this.gameObject.name == "Character") { SendMessage("Falling", true); }
@@ -138,7 +184,7 @@ public class CharControl : MonoBehaviour
     //dont think this needs to be public
     public void LadderInteract(GameObject ladder)
     {
-        if (!onLadder && gameObject.name == "Character")
+        if (state != "ladder" && gameObject.name == "Character")
         {
             attachedobjectmin = ladder.transform.parent.GetChild(0).transform;
             attachedobjectmax = ladder.transform.parent.GetChild(1).transform;
@@ -148,16 +194,16 @@ public class CharControl : MonoBehaviour
             if (transform.position.y < attachedobjectmin.position.y)
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
             transform.forward = attachedobjectmax.forward;
-            onLadder = true;
+            state = "ladder";
             rock.SendMessage("DisableFollow");
             //SendMessage("Climbing", true);
         }
         else
         {
-            onLadder = false;
             SendMessage("PauseAnim", false);
             SendMessage("Falling", true);
             SendMessage("Climbing", false);
+            state = "neutral";
         }
 
     }
@@ -173,12 +219,12 @@ public class CharControl : MonoBehaviour
     }
     public void Interact()
     {
-        if (onLadder)
+        if (state == "ladder")
         {
-            onLadder = false;
             SendMessage("PauseAnim", false);
             SendMessage("Falling", true);
             SendMessage("Climbing", false);
+            state = "neutral";
             return;
         }
         if (holdingSomething)
