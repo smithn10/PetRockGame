@@ -35,8 +35,7 @@ public class CameraOrbit : MonoBehaviour
         verticalScroll = Mathf.Min(maxRot, verticalScroll);
         verticalScroll = Mathf.Max(minRot, verticalScroll);
         transform.RotateAround(smoothingObject.position, transform.right, verticalScroll);
-
-        transform.LookAt(smoothingObject);
+        
     }
 
     // switch camera focus to rock

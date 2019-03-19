@@ -40,6 +40,8 @@ public class CharControl : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
+        if (this.gameObject.name == "Character")
+        { SendMessage("SetAnimSpeed", movevec.magnitude); }
         if (state == "ladder")
         {
             chVelocity = new Vector3(0, 0, 0);
