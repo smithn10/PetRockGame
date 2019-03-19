@@ -89,10 +89,22 @@ public class CharControl : MonoBehaviour
             //jumping, tests if the collider is grounded 
             if (control.isGrounded)
             {
+                if (this.gameObject.name == "Character") { SendMessage("Landing", true); }
+                if (this.gameObject.name == "Character") { SendMessage("Falling", false); }
+                if (this.gameObject.name == "Character") { SendMessage("Jumping", false); }
                 //here if is grounded 
                 chVelocity = new Vector3(chVelocity.x, -.1f, chVelocity.z);
                 if (jumpbool)
+                {
+                    if (this.gameObject.name == "Character") { SendMessage("Jumping", true); }
+                    if (this.gameObject.name == "Character") { SendMessage("Landing", false); }
                     Jump();
+                }
+            } else
+            {
+                if (this.gameObject.name == "Character") { SendMessage("Landing", false); }
+                if (this.gameObject.name == "Character") { SendMessage("Falling", true); }
+                if (this.gameObject.name == "Character") { SendMessage("Jumping", false); }
             }
 
             //limiting speed 
@@ -103,6 +115,7 @@ public class CharControl : MonoBehaviour
             }
             chVelocity = new Vector3(forward.x, chVelocity.y, forward.z);
             jumpbool = false;
+            //if (this.gameObject.name == "Character") { SendMessage("Jumping", false); }
             if(control.enabled)
                 control.Move(chVelocity*Time.deltaTime);
         }
@@ -110,6 +123,7 @@ public class CharControl : MonoBehaviour
         { // smash attack 
             helditem.pickUp(this.gameObject);
             holdingSomething = false;
+            SendMessage("Holding", false);
             rock.SendMessage("Jump");
         }
     }
@@ -141,6 +155,8 @@ public class CharControl : MonoBehaviour
         else
         {
             onLadder = false;
+            SendMessage("PauseAnim", false);
+            SendMessage("Falling", true);
             SendMessage("Climbing", false);
         }
 
@@ -160,6 +176,8 @@ public class CharControl : MonoBehaviour
         if (onLadder)
         {
             onLadder = false;
+            SendMessage("PauseAnim", false);
+            SendMessage("Falling", true);
             SendMessage("Climbing", false);
             return;
         }
@@ -167,6 +185,7 @@ public class CharControl : MonoBehaviour
         {
             helditem.pickUp(this.gameObject);
             holdingSomething = false;
+            SendMessage("Holding", false);
             if (true)
             {
                 helditem.GetComponent<CharControl>().Jump();
@@ -197,6 +216,7 @@ public class CharControl : MonoBehaviour
             {
                 case "pickup":
                     holdingSomething = true;
+                    SendMessage("Holding", true);
                     helditem = inter;
                     inter.pickUp(this.gameObject);
                     break;
@@ -213,6 +233,7 @@ public class CharControl : MonoBehaviour
     void Jump()
     {
         chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
+        if (this.gameObject.name == "Character") { SendMessage("Jumping", true); }
     }
     void MoveInstant(Vector3 vec)
     {

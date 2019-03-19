@@ -154,8 +154,8 @@ ModelImporter:
     - serializedVersion: 16
       name: BoyLand
       takeName: Take 001
-      firstFrame: 21
-      lastFrame: 130
+      firstFrame: 25
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

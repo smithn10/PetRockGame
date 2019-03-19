@@ -5681,5 +5681,10 @@ PrefabInstance:
       propertyPath: connectionObject
       value: 
       objectReference: {fileID: 1108550266}
+    - target: {fileID: 5027687251924084710, guid: 83714298ee44e964b838620be226d266,
+        type: 3}
+      propertyPath: ticks
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83714298ee44e964b838620be226d266, type: 3}

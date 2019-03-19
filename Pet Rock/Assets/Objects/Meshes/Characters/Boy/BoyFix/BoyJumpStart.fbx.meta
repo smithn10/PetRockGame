@@ -154,8 +154,8 @@ ModelImporter:
     - serializedVersion: 16
       name: BoyJumpStart
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 130
+      firstFrame: 2
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

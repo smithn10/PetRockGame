@@ -155,14 +155,14 @@ ModelImporter:
       name: BoyFall
       takeName: Take 001
       firstFrame: 9
-      lastFrame: 130
+      lastFrame: 23
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
