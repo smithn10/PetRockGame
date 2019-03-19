@@ -5657,6 +5657,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1020505036}
+    - target: {fileID: 6821174654058212354, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: jumpheight
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6821174654868928171, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: lockMovement
