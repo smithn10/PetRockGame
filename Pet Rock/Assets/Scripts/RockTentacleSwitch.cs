@@ -6,17 +6,25 @@ public class RockTentacleSwitch : MonoBehaviour {
     public GameObject cam;
     public GameObject target;
     public GameObject activeState;
+    public GameObject rock;
     public int ticks;
     public int i = 0;
     public float speed = 0f;
+    public float angleThreshold;
     public bool leverActive;
     private bool inRange = false;
 
     void Update() {
-        if (inRange && Input.GetKeyDown(KeyCode.E)) {
-            activeState.SetActive(!activeState.activeSelf);
-            activeState.SendMessage("UpdateI", i);
-            gameObject.SetActive(!gameObject.activeSelf);
+        if (inRange) {
+            Vector3 direction = (transform.position - rock.transform.position).normalized;
+            float angle = Vector3.Dot(direction, rock.transform.forward);
+            float distance = direction.magnitude;
+
+            if((angle > angleThreshold) && (Input.GetKeyDown(KeyCode.E))) {
+                activeState.SetActive(!activeState.activeSelf);
+                activeState.SendMessage("UpdateI", i);
+                gameObject.SetActive(!gameObject.activeSelf);
+            }
         }
 
         if ((leverActive) && (i < ticks)) {

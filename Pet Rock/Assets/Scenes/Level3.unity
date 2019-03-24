@@ -889,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 1646054562677108580, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1646054562677108583, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -964,32 +964,32 @@ PrefabInstance:
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.z
-      value: 2.975603
+      value: 2.0630226
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.z
-      value: -14.73422
+      value: -14.126091
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.373661
+      value: 3.851345
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.x
-      value: -8.502159
+      value: -8.446745
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.970799
+      value: 2.2846665
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.y
-      value: 3.0026329
+      value: 3.1595666
       objectReference: {fileID: 0}
     - target: {fileID: 5036022285098944316, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -1051,9 +1051,11 @@ MonoBehaviour:
   cam: {fileID: 578112009}
   target: {fileID: 1164921229}
   activeState: {fileID: 435008795}
+  rock: {fileID: 506688119}
   ticks: 175
   i: 0
   speed: 2
+  angleThreshold: 0.7
   leverActive: 1
 --- !u!1 &415688746
 GameObject:
@@ -1219,12 +1221,12 @@ PrefabInstance:
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.z
-      value: 3.1011505
+      value: 1.9772415
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.z
-      value: 22.707611
+      value: 22.145657
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -1239,12 +1241,12 @@ PrefabInstance:
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.471716
+      value: 3.9558697
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.x
-      value: -8.517676
+      value: -8.5473585
       objectReference: {fileID: 0}
     - target: {fileID: 5036022285098944316, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -1306,9 +1308,11 @@ MonoBehaviour:
   cam: {fileID: 578112009}
   target: {fileID: 1164921229}
   activeState: {fileID: 371724547}
+  rock: {fileID: 506688119}
   ticks: 175
   i: 0
   speed: 2
+  angleThreshold: 0.7
   leverActive: 0
 --- !u!1 &436561046
 GameObject:
@@ -1962,7 +1966,7 @@ PrefabInstance:
     - target: {fileID: 1646054562677108580, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1646054562677108583, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -2037,32 +2041,32 @@ PrefabInstance:
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.z
-      value: 4.371811
+      value: 3.4816055
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.z
-      value: -12.574554
+      value: -11.832714
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.4497223
+      value: 3.0635672
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.y
-      value: 3.242095
+      value: 3.5490174
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.x
-      value: 3.7623978
+      value: 6.327137
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.x
-      value: -8.599602
+      value: -8.703577
       objectReference: {fileID: 0}
     - target: {fileID: 5036022285098944316, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -2124,9 +2128,11 @@ MonoBehaviour:
   cam: {fileID: 578112009}
   target: {fileID: 337926556}
   activeState: {fileID: 1846740511}
+  rock: {fileID: 506688119}
   ticks: 70
   i: 0
   speed: 2
+  angleThreshold: 0.7
   leverActive: 1
 --- !u!1 &619720744
 GameObject:
@@ -6559,32 +6565,32 @@ PrefabInstance:
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.z
-      value: 4.07708
+      value: 3.4042244
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.z
-      value: 20.360672
+      value: 19.799963
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.x
-      value: 3.1741257
+      value: 6.1768646
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.x
-      value: -8.460541
+      value: -8.411045
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.5535364
+      value: 3.1503325
       objectReference: {fileID: 0}
     - target: {fileID: 3268772703586670813, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
       propertyPath: m_Center.y
-      value: 3.2940016
+      value: 3.5923996
       objectReference: {fileID: 0}
     - target: {fileID: 5036022285098944316, guid: 0abb61f2f04a36e46927b3fbce5c9462,
         type: 3}
@@ -6646,9 +6652,11 @@ MonoBehaviour:
   cam: {fileID: 578112009}
   target: {fileID: 337926556}
   activeState: {fileID: 583468559}
+  rock: {fileID: 506688119}
   ticks: 70
   i: 0
   speed: 2
+  angleThreshold: 0.7
   leverActive: 0
 --- !u!1 &1883515365
 GameObject:
