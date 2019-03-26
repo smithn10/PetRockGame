@@ -27,7 +27,6 @@ public class RockTentacleSwitch : MonoBehaviour {
             }
         }
         
-        Debug.Log(DistCovered + " and " + leverActive);
         if ((leverActive) && (DistCovered < Distance)) {
             float thisMoveDist = Mathf.Min(speed * Time.deltaTime, Distance - DistCovered);
             target.transform.Translate(Vector3.right * thisMoveDist);
