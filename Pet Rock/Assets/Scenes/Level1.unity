@@ -2074,10 +2074,9 @@ MonoBehaviour:
   - {fileID: 638117616}
   - {fileID: 247001714}
   activeState: {fileID: 1129341045}
-  ticks: 100
-  i: 0
   speed: 5
   cooldown: 5
+  Distance: 50
   translateUp: 1
   leverActive: 0
 --- !u!4 &514910775 stripped
@@ -4876,10 +4875,9 @@ MonoBehaviour:
   - {fileID: 638117616}
   - {fileID: 247001714}
   activeState: {fileID: 503374774}
-  ticks: 400
-  i: 0
-  speed: 6
-  cooldown: 6
+  speed: 5
+  cooldown: 5
+  Distance: 50
   translateUp: 1
   leverActive: 1
 --- !u!1001 &1133570306
@@ -7255,51 +7253,6 @@ PrefabInstance:
       propertyPath: rockTransform
       value: 
       objectReference: {fileID: 213330038}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1049423981175249565, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af637379f8ddd84459bc7d8cb8d9e0bb, type: 3}
 --- !u!20 &1531748483 stripped
