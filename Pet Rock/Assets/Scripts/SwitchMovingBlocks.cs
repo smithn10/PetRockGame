@@ -8,11 +8,11 @@ public class SwitchMovingBlocks : MonoBehaviour {
     public GameObject cam;
     public GameObject[] connectionObjects;
     public GameObject activeState;
-    public int ticks;
-    public int i = 0;
     public float speed = 0f;
     public float cooldown = 0;
+    public float Distance = 6f;
     public bool translateUp = true;
+    private float DistCovered = 0f;
     private bool inRange = false;
     public bool leverActive = false;
 
@@ -28,17 +28,18 @@ public class SwitchMovingBlocks : MonoBehaviour {
         }
 
         if ((leverActive) && (cooldown < 1)) {
-            if (i < ticks) {
+            if (DistCovered < Distance) {
                 for (int j = 0; j < connectionObjects.Length; j++) {
-                    if (translateUp) { connectionObjects[j].transform.Translate(Vector3.up * speed * Time.deltaTime); }
-                    else { connectionObjects[j].transform.Translate(Vector3.down * speed * Time.deltaTime); }
-                    i++;
+                    float thisMoveDist = Mathf.Min(speed * Time.deltaTime, Distance - DistCovered);
+                    if (translateUp) { connectionObjects[j].transform.Translate(Vector3.up * thisMoveDist); }
+                    else { connectionObjects[j].transform.Translate(Vector3.down * thisMoveDist); }
+                    DistCovered += thisMoveDist;
                 }
             }
 
-            if (i >= ticks) {
+            if (DistCovered >= Distance) {
                 translateUp = !translateUp;
-                i = 0;
+                DistCovered = 0;
                 cooldown = 120;
             }
         } else if ((leverActive) && (cooldown >= 1)) {
