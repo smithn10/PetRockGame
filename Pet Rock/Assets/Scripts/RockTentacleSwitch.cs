@@ -7,11 +7,11 @@ public class RockTentacleSwitch : MonoBehaviour {
     public GameObject target;
     public GameObject activeState;
     public GameObject rock;
-    public int ticks;
-    public int i = 0;
     public float speed = 0f;
+    public float Distance = 6f;
     public float angleThreshold;
     public bool leverActive;
+    private float DistCovered = 0f;
     private bool inRange = false;
 
     void Update() {
@@ -22,17 +22,20 @@ public class RockTentacleSwitch : MonoBehaviour {
 
             if((angle > angleThreshold) && (Input.GetKeyDown(KeyCode.E))) {
                 activeState.SetActive(!activeState.activeSelf);
-                activeState.SendMessage("UpdateI", i);
+                activeState.SendMessage("UpdateDistCovered", DistCovered);
                 gameObject.SetActive(!gameObject.activeSelf);
             }
         }
-
-        if ((leverActive) && (i < ticks)) {
-            target.transform.Translate(Vector3.right * speed * Time.deltaTime);
-            i++;
-        } else if ((!leverActive) && (i > 0)) {
-            target.transform.Translate(Vector3.left * speed * Time.deltaTime);
-            i--;
+        
+        Debug.Log(DistCovered + " and " + leverActive);
+        if ((leverActive) && (DistCovered < Distance)) {
+            float thisMoveDist = Mathf.Min(speed * Time.deltaTime, Distance - DistCovered);
+            target.transform.Translate(Vector3.right * thisMoveDist);
+            DistCovered += thisMoveDist;
+        } else if ((!leverActive) && (DistCovered > 0)) {
+            float thisMoveDist = Mathf.Min(speed * Time.deltaTime, DistCovered);
+            target.transform.Translate(Vector3.left * thisMoveDist);
+            DistCovered -= thisMoveDist;
         }
     }
 
@@ -47,5 +50,5 @@ public class RockTentacleSwitch : MonoBehaviour {
         inRange = false; // update in range when leaving lever tentacle trigger range
     }
 
-    void UpdateI(int i_) { i = i_; }
+    void UpdateDistCovered(int dist_) { DistCovered = dist_; }
 }
