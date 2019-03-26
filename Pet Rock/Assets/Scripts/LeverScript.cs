@@ -6,16 +6,20 @@ public class LeverScript : MonoBehaviour {
     public GameObject cam;
     public GameObject target;
     public GameObject activeState;
+    public Wiring lightingPath = null;
     private bool inRange = false;
     private bool leverActive = false;
 
     void Update() {
         //toggle active state of stairs, lever, and other lever
-        if (inRange && Input.GetKeyDown(KeyCode.E)) {
+        if (inRange && Input.GetKeyDown(KeyCode.E)) {   
             target.SetActive(!target.activeSelf);
             activeState.SetActive(!activeState.activeSelf);
             gameObject.SetActive(!gameObject.activeSelf);
             leverActive = !leverActive;
+            if (lightingPath != null){
+                lightingPath.toggle();
+            }
         }
     }
 

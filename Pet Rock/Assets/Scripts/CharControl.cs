@@ -9,6 +9,7 @@ public class CharControl : MonoBehaviour
     public float maxspeed = 5;
     public float jumpheight = 0.5f;
     public float gravity = -1;
+    public bool glideEnabled = false;
     public float glideFallSpeed = -1.5f;
     private float gravitystore = 0;
     public Camera cam;
@@ -144,7 +145,7 @@ public class CharControl : MonoBehaviour
                     Jump();
                 }
             }
-            else if (jumpbool && transform.tag == "Rock")
+            else if (jumpbool && transform.tag == "Rock" && glideEnabled)
             {
                 state = "gliding";
             }
