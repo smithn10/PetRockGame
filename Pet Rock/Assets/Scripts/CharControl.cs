@@ -29,6 +29,7 @@ public class CharControl : MonoBehaviour
     public float throwPower = .05f;
     private int i = 0;
     private CharacterController capsule;
+    private bool spaceHeld = false;
     // Start is called before the first frame update 
     void Start()
     {
@@ -92,6 +93,10 @@ public class CharControl : MonoBehaviour
             if (control.isGrounded || jumpbool)
             {
                 state = "neutral";
+            }else if (!spaceHeld)
+            {
+
+                state = "neutral";
             }
 
             //limiting speed 
@@ -107,7 +112,11 @@ public class CharControl : MonoBehaviour
         }
         else
         {
-            chVelocity += new Vector3(0, gravity * Time.deltaTime, 0);
+            chVelocity += new Vector3(0, gravity * 1.4f * Time.deltaTime, 0);
+            if (chVelocity.y < -.1)
+                chVelocity += new Vector3(0, gravity * .3f * Time.deltaTime, 0);
+            if (spaceHeld)
+                chVelocity += new Vector3(0, gravity * -.6f * Time.deltaTime, 0);
             Vector3 forward = chVelocity;
             forward.y = 0;
             //decelleration 
@@ -177,12 +186,20 @@ public class CharControl : MonoBehaviour
         }
     }
     //public method for recieveing input from inputhandler
-    public void SetInput(float horizontal, float vertical, bool jumping)
+    public void SetInput(float horizontal, float vertical, bool space)
     {
         movevec = new Vector3(horizontal, 0, vertical);
         movevec = camRelative(movevec);
         movevec = movevec.normalized;
-        jumpbool = jumping;
+        if(space && !spaceHeld)
+        {
+            jumpbool = true;
+        }
+        else
+        {
+            jumpbool = false;
+        }
+        spaceHeld = space;
     }
     //dont think this needs to be public
     public void LadderInteract(GameObject ladder)

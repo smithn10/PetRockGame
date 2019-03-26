@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 
         if (!paused && !(!canChangeChar && !activePlayer))
         {
-            inpMangr.SendInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetButtonDown("Jump"), Input.GetButtonDown("Interact"));
+            inpMangr.SendInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), Input.GetButton("Jump"), Input.GetButtonDown("Interact"));
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)) { // check for when we add in the pause feature
