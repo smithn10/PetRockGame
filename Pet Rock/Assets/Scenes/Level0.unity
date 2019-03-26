@@ -7117,7 +7117,7 @@ PrefabInstance:
     - target: {fileID: 5027687251924084710, guid: 83714298ee44e964b838620be226d266,
         type: 3}
       propertyPath: ticks
-      value: 135
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83714298ee44e964b838620be226d266, type: 3}
