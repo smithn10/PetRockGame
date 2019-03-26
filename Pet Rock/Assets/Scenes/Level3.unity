@@ -778,9 +778,8 @@ MonoBehaviour:
   target: {fileID: 460275364}
   activeState: {fileID: 730970722}
   rock: {fileID: 506688119}
-  ticks: 0
-  i: 0
   speed: 0
+  Distance: 6
   angleThreshold: 0.7
   leverActive: 0
 --- !u!1 &220341899
@@ -1028,8 +1027,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337926556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.33, y: 2.23, z: 32.7}
-  m_LocalScale: {x: 42.099003, y: 1.5, z: 2.8000002}
+  m_LocalPosition: {x: -17.2, y: 2.23, z: 32.7}
+  m_LocalScale: {x: 36.836628, y: 1.5, z: 2.8000002}
   m_Children: []
   m_Father: {fileID: 652680732}
   m_RootOrder: 1
@@ -1270,9 +1269,8 @@ MonoBehaviour:
   target: {fileID: 1164921229}
   activeState: {fileID: 435008795}
   rock: {fileID: 506688119}
-  ticks: 100
-  i: 0
   speed: 5
+  Distance: 10
   angleThreshold: 0.7
   leverActive: 1
 --- !u!1 &415688746
@@ -1527,9 +1525,8 @@ MonoBehaviour:
   target: {fileID: 1164921229}
   activeState: {fileID: 371724547}
   rock: {fileID: 506688119}
-  ticks: 100
-  i: 0
   speed: 5
+  Distance: 10
   angleThreshold: 0.7
   leverActive: 0
 --- !u!1 &436561046
@@ -2452,9 +2449,8 @@ MonoBehaviour:
   target: {fileID: 337926556}
   activeState: {fileID: 1846740511}
   rock: {fileID: 506688119}
-  ticks: 400
-  i: 0
   speed: 5
+  Distance: 30
   angleThreshold: 0.7
   leverActive: 1
 --- !u!1 &619720744
@@ -3190,9 +3186,8 @@ MonoBehaviour:
   target: {fileID: 460275364}
   activeState: {fileID: 98466729}
   rock: {fileID: 506688119}
-  ticks: 0
-  i: 0
   speed: 0
+  Distance: 6
   angleThreshold: 0.7
   leverActive: 0
 --- !u!1 &749822008
@@ -7507,9 +7502,8 @@ MonoBehaviour:
   target: {fileID: 337926556}
   activeState: {fileID: 583468559}
   rock: {fileID: 506688119}
-  ticks: 400
-  i: 0
   speed: 5
+  Distance: 30
   angleThreshold: 0.7
   leverActive: 0
 --- !u!1 &1883515365

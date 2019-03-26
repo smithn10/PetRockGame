@@ -128,6 +128,7 @@ MonoBehaviour:
   maxspeed: 7
   jumpheight: 25
   gravity: -30
+  glideFallSpeed: -1.5
   cam: {fileID: 0}
   interactDistance: 2
   rock: {fileID: 6821174654058212366}
@@ -144,9 +145,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.022258207
-  m_Height: 0.15171291
+  m_Height: 0.14211628
   m_Direction: 1
-  m_Center: {x: 0.00046267553, y: -0.004433901, z: 0.0035749183}
+  m_Center: {x: 0.00046267553, y: -0.009232175, z: 0.0035749183}
 --- !u!143 &893548296
 CharacterController:
   m_ObjectHideFlags: 0
@@ -218,6 +219,7 @@ MonoBehaviour:
   maxspeed: 7
   jumpheight: 15
   gravity: -30
+  glideFallSpeed: -1.5
   cam: {fileID: 0}
   interactDistance: 1
   rock: {fileID: 6821174654058212366}
