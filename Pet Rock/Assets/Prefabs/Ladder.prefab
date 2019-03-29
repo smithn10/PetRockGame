@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 4093746680998509613}
   - component: {fileID: 4093746680998509603}
   - component: {fileID: 4093746680998509614}
+  - component: {fileID: 7782118881516594291}
   m_Layer: 0
   m_Name: BottomLatch
   m_TagString: Untagged
@@ -208,8 +209,23 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1, z: 1}
-  m_Center: {x: 0, y: -0.00000047683716, z: 0}
+  m_Size: {x: 1.0000001, y: 1, z: 1.1010153}
+  m_Center: {x: -1.7042155e-16, y: -0.00000047683716, z: -0.050507635}
+--- !u!114 &7782118881516594291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093746680998509608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b5037b49bc3064f98e10c50a3026c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  textInBox: {fileID: 0}
+  info: Press [E] to climb ladder
 --- !u!1 &4093746681071228991
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +239,7 @@ GameObject:
   - component: {fileID: 4093746681071228988}
   - component: {fileID: 4093746681071228989}
   - component: {fileID: 4093746681071228978}
+  - component: {fileID: 2791304867329348681}
   m_Layer: 0
   m_Name: TopLatch
   m_TagString: Untagged
@@ -313,8 +330,23 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000001, y: 1, z: 1.48142}
+  m_Center: {x: 1.3201686e-16, y: 0, z: 0.24071008}
+--- !u!114 &2791304867329348681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093746681071228991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b5037b49bc3064f98e10c50a3026c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 0}
+  textInBox: {fileID: 0}
+  info: Press [E] to climb ladder
 --- !u!1 &4093746681117778367
 GameObject:
   m_ObjectHideFlags: 0

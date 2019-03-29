@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonSetScript : MonoBehaviour {
     public GameObject rock;
     public GameObject target;
     public GameObject counterpart;
+    public GameObject textBox;
+    public Text textInBox;
     private bool onButton = false;
     private bool targetsActivated = false;
     private bool counterpartsActivated = false;
@@ -30,6 +33,10 @@ public class ButtonSetScript : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
         if (col.gameObject == rock) {
             onButton = true;
+            textBox.SetActive(false);
+        } else {
+            textBox.SetActive(true);
+            textInBox.text = "Not heavy enough to activate";
         }
     }
 
@@ -37,5 +44,6 @@ public class ButtonSetScript : MonoBehaviour {
         if (col.gameObject == rock) {
             onButton = false;
         }
+        textBox.SetActive(false);
     }
 }

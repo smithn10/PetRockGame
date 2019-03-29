@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour {
     public GameObject rock;
     public GameObject player;
     public GameObject cam;
     public GameObject connectionObject;
+    public GameObject textBox;
+    public Text textInBox;
     public float Distance = 6f;
     private float DistCovered = 0f;
     public float speed = 0f;
     private bool onButton = false;
+
 
     void Update() {
         if (onButton) {
@@ -26,14 +30,17 @@ public class ButtonScript : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
         if (col.gameObject == rock) {
             onButton = true;
-            rock.SendMessage("DisableFollow");
+            textBox.SetActive(false);
+        } else {
+            textBox.SetActive(true);
+            textInBox.text = "Not heavy enough to activate";
         }
     }
 
     void OnTriggerExit(Collider col) {
         if (col.gameObject == rock) {
             onButton = false;
-            rock.SendMessage("EnableFollow");
         }
+        textBox.SetActive(false);
     }
 }

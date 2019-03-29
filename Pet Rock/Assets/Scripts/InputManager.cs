@@ -39,6 +39,6 @@ public class InputManager : MonoBehaviour
     }
     public void DisableFollow()
     {
-        player2.SendMessage("DisableFollow");
+        //player2.SendMessage("DisableFollow");
     }
 }

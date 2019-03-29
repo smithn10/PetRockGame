@@ -96,8 +96,9 @@ MonoBehaviour:
   player: {fileID: 0}
   cam: {fileID: 0}
   connectionObject: {fileID: 0}
-  ticks: 126
-  i: 0
+  textBox: {fileID: 0}
+  textInBox: {fileID: 0}
+  Distance: 6
   speed: 2
 --- !u!65 &5424537583257251255
 BoxCollider:
@@ -110,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1454978, y: 0.11881733, z: 1.1466036}
-  m_Center: {x: 0.0011742115, y: 0.010151386, z: -0.0014133453}
+  m_Size: {x: 1.1454978, y: 0.6112337, z: 1.1466036}
+  m_Center: {x: 0.0011742115, y: 0.25635958, z: -0.0014133453}
 --- !u!1001 &7114266961862861775
 PrefabInstance:
   m_ObjectHideFlags: 0

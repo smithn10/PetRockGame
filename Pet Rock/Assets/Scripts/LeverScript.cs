@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeverScript : MonoBehaviour {
     public GameObject cam;
     public GameObject target;
     public GameObject activeState;
+    public GameObject textBox;
+    public Text textInBox;
     public Wiring lightingPath = null;
     private bool inRange = false;
     private bool leverActive = false;
@@ -27,10 +30,13 @@ public class LeverScript : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
         if (col.name == "Character") { // player collided with object
             inRange = true; // update in range when entering lever trigger range
+            textBox.SetActive(true);
+            textInBox.text = "Press [E] to use lever";
         }
     }
 
     void OnTriggerExit(Collider col) {
         inRange = false; // update in range when leaving lever trigger range
+        textBox.SetActive(false);
     }
 }
