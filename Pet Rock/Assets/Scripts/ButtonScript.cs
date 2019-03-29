@@ -23,7 +23,10 @@ public class ButtonScript : MonoBehaviour {
                 connectionObject.transform.Translate(Vector3.forward * thisMoveDist);
                 DistCovered += thisMoveDist;
             }
-            
+        }
+
+        if (cam.GetComponent<SmoothFollow>().followTarget == rock) { // check to see if character was switched to rock after trigger was enter
+            textBox.SetActive(false);
         }
     }
 

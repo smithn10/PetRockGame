@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonSetScript : MonoBehaviour {
+    public GameObject cam;
     public GameObject rock;
     public GameObject target;
     public GameObject counterpart;
@@ -27,6 +28,10 @@ public class ButtonSetScript : MonoBehaviour {
             }
 
             onButton = false;
+        }
+
+        if(cam.GetComponent<SmoothFollow>().followTarget == rock) { // check to see if character was switched to rock after trigger was enter
+            textBox.SetActive(false);
         }
     }
 
