@@ -1,90 +1,15 @@
 fileFormatVersion: 2
-guid: 7c114a28af8ced64bbb0d6b613baddad
+guid: 74208d5ac22bd7e44ab85ddfdd10a8e9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: joint1
-    100002: joint10
-    100004: joint11
-    100006: joint12
-    100008: joint13
-    100010: joint14
-    100012: joint15
-    100014: joint16
-    100016: joint17
-    100018: joint18
-    100020: joint19
-    100022: joint2
-    100024: joint20
-    100026: joint21
-    100028: joint22
-    100030: joint23
-    100032: joint24
-    100034: joint25
-    100036: joint26
-    100038: joint27
-    100040: joint28
-    100042: joint29
-    100044: joint3
-    100046: joint30
-    100048: joint31
-    100050: joint32
-    100052: joint33
-    100054: joint34
-    100056: joint4
-    100058: joint5
-    100060: joint6
-    100062: joint7
-    100064: joint8
-    100066: joint9
-    100068: pSphere3
-    100070: //RootNode
-    400000: joint1
-    400002: joint10
-    400004: joint11
-    400006: joint12
-    400008: joint13
-    400010: joint14
-    400012: joint15
-    400014: joint16
-    400016: joint17
-    400018: joint18
-    400020: joint19
-    400022: joint2
-    400024: joint20
-    400026: joint21
-    400028: joint22
-    400030: joint23
-    400032: joint24
-    400034: joint25
-    400036: joint26
-    400038: joint27
-    400040: joint28
-    400042: joint29
-    400044: joint3
-    400046: joint30
-    400048: joint31
-    400050: joint32
-    400052: joint33
-    400054: joint34
-    400056: joint4
-    400058: joint5
-    400060: joint6
-    400062: joint7
-    400064: joint8
-    400066: joint9
-    400068: pSphere3
-    400070: //RootNode
-    2100000: lambert1
-    4300000: pSphere3
-    9500000: //RootNode
-    13700000: pSphere3
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 35fc5a05885ef4f49a807c5df78ab543, type: 2}
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: sign
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -136,8 +61,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -164,7 +89,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
