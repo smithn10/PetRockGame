@@ -13,6 +13,7 @@ public class RockTentacleSwitch : MonoBehaviour {
     public float speed = 0f;
     public float Distance = 6f;
     public float angleThreshold;
+    public float distanceThreshold;
     public bool leverActive;
     private float DistCovered = 0f;
     private bool inRange = false;
@@ -22,6 +23,7 @@ public class RockTentacleSwitch : MonoBehaviour {
             Vector3 direction = (transform.position - rock.transform.position).normalized;
             float angle = Vector3.Dot(direction, rock.transform.forward);
             float distance = direction.magnitude;
+            Debug.Log(distance);
 
             if((angle > angleThreshold) && (cam.GetComponent<SmoothFollow>().followTarget == rock)) {
                 textBox.SetActive(true);

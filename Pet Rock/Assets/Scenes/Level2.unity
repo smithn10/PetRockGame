@@ -1396,6 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
@@ -1713,6 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
@@ -2000,6 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
@@ -3226,6 +3229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
@@ -4674,6 +4678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
@@ -5927,6 +5932,11 @@ PrefabInstance:
       propertyPath: jumpheight
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 6821174654058212354, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: glideEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6821174654868928171, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: lockMovement
@@ -6439,6 +6449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
@@ -6826,6 +6837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
@@ -8997,6 +9009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
@@ -9111,6 +9124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
@@ -10082,6 +10096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   rock: {fileID: 1263178789}
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
