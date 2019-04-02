@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8577798da1cd5a64bb0f55e53fe787ec
+guid: d4479f43966da5747b6221c7fc36af6b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -45,12 +45,16 @@ ModelImporter:
     100078: joint45
     100080: joint46
     100082: joint47
-    100084: joint5
-    100086: joint6
-    100088: joint7
-    100090: joint8
-    100092: joint9
-    100094: //RootNode
+    100084: joint48
+    100086: joint49
+    100088: joint5
+    100090: joint50
+    100092: joint6
+    100094: joint7
+    100096: joint8
+    100098: joint9
+    100100: pCone2
+    100102: //RootNode
     400000: joint1
     400002: joint10
     400004: joint11
@@ -93,14 +97,20 @@ ModelImporter:
     400078: joint45
     400080: joint46
     400082: joint47
-    400084: joint5
-    400086: joint6
-    400088: joint7
-    400090: joint8
-    400092: joint9
-    400094: //RootNode
-    7400000: Take 001
+    400084: joint48
+    400086: joint49
+    400088: joint5
+    400090: joint50
+    400092: joint6
+    400094: joint7
+    400096: joint8
+    400098: joint9
+    400100: pCone2
+    400102: //RootNode
+    2100000: lambert1
+    4300000: pCone2
     9500000: //RootNode
+    13700000: pCone2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -128,35 +138,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
-      firstFrame: 41
-      lastFrame: 51
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

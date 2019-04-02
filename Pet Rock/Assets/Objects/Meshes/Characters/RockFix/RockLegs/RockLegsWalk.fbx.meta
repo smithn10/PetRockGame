@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8577798da1cd5a64bb0f55e53fe787ec
+guid: 93869370187d93441bdb88ddbcd3e0ba
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -31,26 +31,13 @@ ModelImporter:
     100050: joint32
     100052: joint33
     100054: joint34
-    100056: joint35
-    100058: joint36
-    100060: joint37
-    100062: joint38
-    100064: joint39
-    100066: joint4
-    100068: joint40
-    100070: joint41
-    100072: joint42
-    100074: joint43
-    100076: joint44
-    100078: joint45
-    100080: joint46
-    100082: joint47
-    100084: joint5
-    100086: joint6
-    100088: joint7
-    100090: joint8
-    100092: joint9
-    100094: //RootNode
+    100056: joint4
+    100058: joint5
+    100060: joint6
+    100062: joint7
+    100064: joint8
+    100066: joint9
+    100068: //RootNode
     400000: joint1
     400002: joint10
     400004: joint11
@@ -79,26 +66,13 @@ ModelImporter:
     400050: joint32
     400052: joint33
     400054: joint34
-    400056: joint35
-    400058: joint36
-    400060: joint37
-    400062: joint38
-    400064: joint39
-    400066: joint4
-    400068: joint40
-    400070: joint41
-    400072: joint42
-    400074: joint43
-    400076: joint44
-    400078: joint45
-    400080: joint46
-    400082: joint47
-    400084: joint5
-    400086: joint6
-    400088: joint7
-    400090: joint8
-    400092: joint9
-    400094: //RootNode
+    400056: joint4
+    400058: joint5
+    400060: joint6
+    400062: joint7
+    400064: joint8
+    400066: joint9
+    400068: //RootNode
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -132,8 +106,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Take 001
       takeName: Take 001
-      firstFrame: 41
-      lastFrame: 51
+      firstFrame: 0
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
