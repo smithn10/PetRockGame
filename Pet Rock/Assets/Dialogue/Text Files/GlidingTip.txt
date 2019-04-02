@@ -1,0 +1,2 @@
+You can now glide with the rock. After jumping press and hold [SPACE] to glide.
+Tip: If you ever feel stranded always try jumping on a platform and then gliding to different platforms.
