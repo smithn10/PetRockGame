@@ -10,6 +10,7 @@ public class EndLevelLever : MonoBehaviour {
     public GameObject rockPlatform;
     public GameObject activeState;
     public GameObject textBox;
+    public GameManager manager;
     public Text textInBox;
     public Wiring lightingPath = null;
     public float speed = 0f;
@@ -24,6 +25,7 @@ public class EndLevelLever : MonoBehaviour {
             ladderBlock.SetActive(!ladderBlock.activeSelf);
             activeState.SetActive(!activeState.activeSelf);
             gameObject.SetActive(!gameObject.activeSelf);
+            manager.gameEnded = true;
             leverActive = !leverActive;
             if (lightingPath != null) {
                 lightingPath.toggle();

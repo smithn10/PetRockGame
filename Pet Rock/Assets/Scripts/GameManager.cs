@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
     public GameObject inputManager;
     public GameObject cam;
     public bool canChangeChar = false;
+    public bool gameEnded = false;
     private bool activePlayer = true;
     private bool paused = false;
     private InputManager inpMangr;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour {
     
 
     void Update() {
-        if((Input.GetKeyDown(KeyCode.Tab)) && (!paused)) {
+        if((Input.GetKeyDown(KeyCode.Tab)) && (!paused) && !gameEnded) {
             if(activePlayer) { // switch to rock
                 cam.SendMessage("FocusRock");
                 inpMangr.DisableFollow();
