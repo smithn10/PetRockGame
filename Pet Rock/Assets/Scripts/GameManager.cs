@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     {
         inpMangr = inputManager.GetComponent<InputManager>();
     }
+    
 
     void Update() {
         if((Input.GetKeyDown(KeyCode.Tab)) && (!paused)) {
