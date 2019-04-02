@@ -31,7 +31,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     public void SendInput(float horizontal, float vertical, bool jump, bool interact)
     {
-        if (lockMovement) { return; } // dont allow the player to move if the movement is locked
+        if (lockMovement) { currChar.SetInput(0, 0, false); return; } // dont allow the player to move if the movement is locked
 
         currChar.SetInput(horizontal, vertical, jump);
         if (interact)
