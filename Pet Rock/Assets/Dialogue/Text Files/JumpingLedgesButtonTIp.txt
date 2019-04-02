@@ -1,0 +1,2 @@
+Jump by pressing [SPACE]. 
+You can jump while holding the rock and throw it while in the air with [E]. Helpful when needing to get the rock on high platforms.

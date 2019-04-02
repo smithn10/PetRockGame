@@ -1561,7 +1561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385225257}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: Enemies (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8328,7 +8328,7 @@ MonoBehaviour:
   rock: {fileID: 213330030}
   endGate: {fileID: 479039082}
   stage: 1
-  enemyCount: 1
+  enemyCount: 7
 --- !u!1 &1595989835
 GameObject:
   m_ObjectHideFlags: 0
