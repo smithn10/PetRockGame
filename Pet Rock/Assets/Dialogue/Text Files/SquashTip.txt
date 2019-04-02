@@ -1,2 +1,1 @@
-Kid: Eww! I hate bugs, I'm going to use my rock to squash them!
-You can throw the rock on top of enemies to kill them, or you can "Left-Click" while holding the rock to smash it on top of them.
+Defeat all the ants ahead to clear this level. You can kill an ant by dropping the rock on them.

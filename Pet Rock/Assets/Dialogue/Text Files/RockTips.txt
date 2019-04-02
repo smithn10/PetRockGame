@@ -1,0 +1,1 @@
+Pick up the rock by pressing [E] next to it, and drop it by pressing [E] while holding it.
