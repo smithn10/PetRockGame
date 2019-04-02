@@ -64,7 +64,7 @@ public class CharControl : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, attachedobjectmin.position.y, transform.position.z);
                 transform.position -= transform.forward.normalized / 4;
             }
-            rock.SendMessage("DisableFollow");
+            //rock.SendMessage("DisableFollow");
         }
         else if (state == "gliding")
         {
