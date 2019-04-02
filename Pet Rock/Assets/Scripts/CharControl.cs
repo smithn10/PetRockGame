@@ -42,8 +42,8 @@ public class CharControl : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
-        if (this.gameObject.name == "Character")
-        { SendMessage("SetAnimSpeed", movevec.magnitude); }
+        if(glideEnabled) SendMessage("Gliding", false);
+        SendMessage("SetAnimSpeed", movevec.magnitude);
         if (state == "ladder")
         {
             chVelocity = new Vector3(0, 0, 0);
@@ -68,6 +68,7 @@ public class CharControl : MonoBehaviour
         }
         else if (state == "gliding")
         {
+            SendMessage("Gliding", true);
             chVelocity = new Vector3(chVelocity.x, glideFallSpeed, chVelocity.z);
             Vector3 forward = chVelocity;
             forward.y = 0;
@@ -142,15 +143,15 @@ public class CharControl : MonoBehaviour
             //jumping, tests if the collider is grounded 
             if (control.isGrounded)
             {
-                if (this.gameObject.name == "Character") { SendMessage("Landing", true); }
-                if (this.gameObject.name == "Character") { SendMessage("Falling", false); }
-                if (this.gameObject.name == "Character") { SendMessage("Jumping", false); }
+                SendMessage("Landing", true);
+                SendMessage("Falling", false);
+                // SendMessage("Jumping", false);
                 //here if is grounded 
                 chVelocity = new Vector3(chVelocity.x, -.1f, chVelocity.z);
                 if (jumpbool)
                 {
-                    if (this.gameObject.name == "Character") { SendMessage("Jumping", true); }
-                    if (this.gameObject.name == "Character") { SendMessage("Landing", false); }
+                    // SendMessage("Jumping", true);
+                    SendMessage("Landing", false);
                     Jump();
                 }
             }
@@ -160,9 +161,9 @@ public class CharControl : MonoBehaviour
             }
             else
             {
-                if (this.gameObject.name == "Character") { SendMessage("Landing", false); }
-                if (this.gameObject.name == "Character") { SendMessage("Falling", true); }
-                if (this.gameObject.name == "Character") { SendMessage("Jumping", false); }
+                SendMessage("Landing", false);
+                SendMessage("Falling", true);
+                // SendMessage("Jumping", false);
             }
 
             //limiting speed 
@@ -299,7 +300,7 @@ public class CharControl : MonoBehaviour
     void Jump()
     {
         chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
-        if (this.gameObject.name == "Character") { SendMessage("Jumping", true); }
+        // SendMessage("Jumping", true);
     }
     void MoveInstant(Vector3 vec)
     {
