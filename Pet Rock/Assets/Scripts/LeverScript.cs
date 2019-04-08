@@ -11,6 +11,7 @@ public class LeverScript : MonoBehaviour {
     public Text textInBox;
     public Wiring lightingPath = null;
     public bool canBeSwitchedBack = true;
+    public bool rockCanSwitch = false;
     private bool inRange = false;
     private bool leverActive = false;
 
@@ -29,7 +30,7 @@ public class LeverScript : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider col) {
-        if ((col.name == "Character") && (canBeSwitchedBack)) { // player collided with object
+        if (((col.name == "Character") || ((col.name == "Rock") && (rockCanSwitch))) && (canBeSwitchedBack)) { // player collided with object
             inRange = true; // update in range when entering lever trigger range
             textBox.SetActive(true);
             textInBox.text = "Press [E] to use lever";
