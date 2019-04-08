@@ -327,4 +327,5 @@ public class CharControl : MonoBehaviour
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height*transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
         Gizmos.DrawWireSphere(bottomSphere + chVelocity * Time.deltaTime * 2, capsule.radius*transform.lossyScale.y);
     }
+    public bool IsPlayerHolding() { return holdingSomething; }
 }   

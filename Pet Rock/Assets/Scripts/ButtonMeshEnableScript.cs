@@ -8,6 +8,7 @@ public class ButtonMeshEnableScript : MonoBehaviour {
     public GameObject cam;
     public GameObject target;
     public GameObject textBox;
+    public CharControl playerControllerScript;
     public Text textInBox;
     private bool onButton = false;
     private bool activated = false;
@@ -20,12 +21,12 @@ public class ButtonMeshEnableScript : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject == rock) {
+        if (col.gameObject == rock || (col.gameObject.tag == "Player" && playerControllerScript.IsPlayerHolding())) {
             onButton = true;
             textBox.SetActive(false);
         } else {
             textBox.SetActive(true);
-            textInBox.text = "Not heavy enough to activate";
+            textInBox.text = "Rock needed to activate";
         }
     }
 

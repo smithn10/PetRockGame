@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1786,6 +1786,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4093746680998509615, guid: e06c6327f4df24c4a9bd6c448c66bde1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.72
+      objectReference: {fileID: 0}
     - target: {fileID: 7782118881516594291, guid: e06c6327f4df24c4a9bd6c448c66bde1,
         type: 3}
       propertyPath: textBox
@@ -1805,11 +1810,6 @@ PrefabInstance:
         type: 3}
       propertyPath: textInBox
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4093746680998509615, guid: e06c6327f4df24c4a9bd6c448c66bde1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e06c6327f4df24c4a9bd6c448c66bde1, type: 3}
@@ -2065,6 +2065,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &356180286
 GameObject:
@@ -2534,6 +2535,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &393085065
 GameObject:
@@ -2907,6 +2909,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &424211826
 PrefabInstance:
@@ -4614,6 +4617,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &729914507
 PrefabInstance:
@@ -6187,6 +6191,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &1040727407
 PrefabInstance:
@@ -7700,6 +7705,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2985766463476776107, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 77641c53c84119146b8a931af69f1f2b, type: 2}
+    - target: {fileID: 4891354420336511867, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994731110900182640, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00283
+      objectReference: {fileID: 0}
     - target: {fileID: 3994731110900675472, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_IsActive
@@ -7710,26 +7730,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3994731110900182640, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00283
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985766463476776107, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 77641c53c84119146b8a931af69f1f2b, type: 2}
     - target: {fileID: 3994731110910050806, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c6161b79b9fc27e4ebee6837faab35b0, type: 2}
-    - target: {fileID: 4891354420336511867, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
 --- !u!1 &1263178789 stripped
@@ -7784,6 +7789,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 1339333999}
   stage2Animator: {fileID: 1263178791}
+--- !u!114 &1263178797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6821174653373054415, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263178788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263178792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d149454d84a37f64185ad1b407231bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1263178799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6821174654058212353, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
@@ -8172,6 +8189,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &1315178784
 PrefabInstance:
@@ -8932,6 +8950,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &1386808953
 GameObject:
@@ -10314,7 +10333,7 @@ GameObject:
   - component: {fileID: 1582648629}
   - component: {fileID: 1582648628}
   m_Layer: 5
-  m_Name: Interactables
+  m_Name: Interactable Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11804,6 +11823,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &1822788984
 PrefabInstance:
@@ -11924,6 +11944,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &1856388293
 GameObject:

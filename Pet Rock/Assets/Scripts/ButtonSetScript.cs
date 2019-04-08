@@ -9,6 +9,7 @@ public class ButtonSetScript : MonoBehaviour {
     public GameObject target;
     public GameObject counterpart;
     public GameObject textBox;
+    public CharControl playerControllerScript;
     public Text textInBox;
     private bool onButton = false;
     private bool targetsActivated = false;
@@ -36,12 +37,12 @@ public class ButtonSetScript : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject == rock) {
+        if ((col.gameObject == rock) || (col.gameObject.tag == "Player" && playerControllerScript.IsPlayerHolding())) {
             onButton = true;
             textBox.SetActive(false);
         } else {
             textBox.SetActive(true);
-            textInBox.text = "Not heavy enough to activate";
+            textInBox.text = "Rock needed to activate";
         }
     }
 

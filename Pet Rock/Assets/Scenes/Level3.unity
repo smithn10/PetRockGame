@@ -977,8 +977,8 @@ MonoBehaviour:
   Distance: 6
   angleThreshold: 0.7
   distanceThreshold: 0
-  leverActive: 0
   canBeSwitchedBack: 1
+  leverActive: 0
 --- !u!4 &114417728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4078185145896058634, guid: 9f2fe50f741bb984fac319d378cb0ec2,
@@ -1761,8 +1761,8 @@ MonoBehaviour:
   Distance: 15
   angleThreshold: 0.7
   distanceThreshold: 0
-  leverActive: 1
   canBeSwitchedBack: 0
+  leverActive: 1
 --- !u!4 &398960167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4078185145896058634, guid: 9f2fe50f741bb984fac319d378cb0ec2,
@@ -1948,8 +1948,8 @@ MonoBehaviour:
   Distance: 15
   angleThreshold: 0.7
   distanceThreshold: 0
-  leverActive: 0
   canBeSwitchedBack: 1
+  leverActive: 0
 --- !u!1 &436561046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,8 +3083,8 @@ MonoBehaviour:
   Distance: 30
   angleThreshold: 0.7
   distanceThreshold: 0
-  leverActive: 1
   canBeSwitchedBack: 1
+  leverActive: 1
 --- !u!1 &619720744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,8 +4013,8 @@ MonoBehaviour:
   Distance: 6
   angleThreshold: 0.7
   distanceThreshold: 0
-  leverActive: 0
   canBeSwitchedBack: 1
+  leverActive: 0
 --- !u!1 &749822008
 GameObject:
   m_ObjectHideFlags: 0
@@ -8980,7 +8980,7 @@ GameObject:
   - component: {fileID: 1730381237}
   - component: {fileID: 1730381236}
   m_Layer: 5
-  m_Name: Interactables
+  m_Name: Interactable Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9666,8 +9666,8 @@ MonoBehaviour:
   Distance: 30
   angleThreshold: 0.7
   distanceThreshold: 0
-  leverActive: 0
   canBeSwitchedBack: 1
+  leverActive: 0
 --- !u!1 &1883515365
 GameObject:
   m_ObjectHideFlags: 0
