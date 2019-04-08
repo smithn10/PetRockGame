@@ -14,8 +14,8 @@ public class RockTentacleSwitch : MonoBehaviour {
     public float Distance = 6f;
     public float angleThreshold;
     public float distanceThreshold;
-    public bool leverActive;
     public bool canBeSwitchedBack = true;
+    public bool leverActive;
     private float DistCovered = 0f;
     private bool inRange = false;
 

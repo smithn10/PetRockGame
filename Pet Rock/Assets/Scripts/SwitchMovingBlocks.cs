@@ -15,6 +15,7 @@ public class SwitchMovingBlocks : MonoBehaviour {
     public float cooldown = 0;
     public float Distance = 6f;
     public bool translateUp = true;
+    public bool canBeSwitchedBack = true;
     private float DistCovered = 0f;
     private bool inRange = false;
     public bool leverActive = false;
@@ -51,11 +52,11 @@ public class SwitchMovingBlocks : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.name == "Character") { // player collided with object
+        if ((col.name == "Character") && (canBeSwitchedBack)) { // player collided with object
             inRange = true; // update in range when entering lever trigger range
             textBox.SetActive(true);
             textInBox.text = "Press [E] to use lever";
-        }
+        } else if (!canBeSwitchedBack) { textBox.SetActive(false); }
     }
 
     void OnTriggerExit(Collider col) {
