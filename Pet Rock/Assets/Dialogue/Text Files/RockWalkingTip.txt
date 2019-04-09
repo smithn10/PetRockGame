@@ -1,0 +1,2 @@
+You can now walk as the rock. Switch to the rock by pressing [TAB].
+Tip: You can also crush enemies as the rock by jumping on them with [SPACE].
