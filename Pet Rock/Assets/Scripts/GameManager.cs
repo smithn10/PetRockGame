@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     private void Start()
     {
         inpMangr = inputManager.GetComponent<InputManager>();
+        Cursor.visible = false;
     }
     
 

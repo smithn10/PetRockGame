@@ -26,7 +26,7 @@ public class SignConversation : MonoBehaviour {
                 textBox.SetActive(true); // display if player is boy character and not reading
             }
 
-            if (Input.GetKeyDown(KeyCode.E)) { // in range of NPC and interact button was pressed
+            if ((cam.GetComponent<SmoothFollow>().followTarget == player) && (Input.GetKeyDown(KeyCode.E))) { // in range of NPC and interact button was pressed
                 isReading = true;
                 dialogueManager.Reload(file); // reload function described in DialogueManager script
                 dialogueManager.currLineIndex = 0;

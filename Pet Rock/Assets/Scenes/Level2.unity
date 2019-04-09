@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1786,6 +1786,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4093746680998509615, guid: e06c6327f4df24c4a9bd6c448c66bde1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.72
+      objectReference: {fileID: 0}
     - target: {fileID: 7782118881516594291, guid: e06c6327f4df24c4a9bd6c448c66bde1,
         type: 3}
       propertyPath: textBox
@@ -1805,11 +1810,6 @@ PrefabInstance:
         type: 3}
       propertyPath: textInBox
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4093746680998509615, guid: e06c6327f4df24c4a9bd6c448c66bde1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e06c6327f4df24c4a9bd6c448c66bde1, type: 3}
@@ -2065,6 +2065,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &356180286
 GameObject:
@@ -2534,6 +2535,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &393085065
 GameObject:
@@ -2907,6 +2909,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &424211826
 PrefabInstance:
@@ -4108,6 +4111,7 @@ RectTransform:
   m_Children:
   - {fileID: 416269088}
   - {fileID: 1582648627}
+  - {fileID: 781248484}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4614,6 +4618,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &729914507
 PrefabInstance:
@@ -5056,6 +5061,101 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768517511}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &781248483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 781248484}
+  - component: {fileID: 781248487}
+  - component: {fileID: 781248486}
+  - component: {fileID: 781248485}
+  m_Layer: 5
+  m_Name: Enemy Count
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &781248484
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781248483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7582799, y: 1.6746999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 613449518}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 20, y: -13}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &781248485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781248483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5696519eab6bc419e21c4ce525f80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateOpenerScript: {fileID: 1693002457}
+  counter: 0
+  myText: {fileID: 781248486}
+--- !u!114 &781248486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781248483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 12
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Enemies left: '
+--- !u!222 &781248487
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781248483}
+  m_CullTransparentMesh: 0
 --- !u!1 &793125649
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,7 +5476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -79, y: 8}
+  m_AnchoredPosition: {x: -50, y: 8}
   m_SizeDelta: {x: 217, y: 24.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869632849
@@ -5412,7 +5512,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'ENTER' to contine...
+  m_Text: '''Left-Click'' to contine...'
 --- !u!222 &869632850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6187,6 +6287,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &1040727407
 PrefabInstance:
@@ -7700,6 +7801,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2985766463476776107, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 77641c53c84119146b8a931af69f1f2b, type: 2}
+    - target: {fileID: 4891354420336511867, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994731110900182640, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00283
+      objectReference: {fileID: 0}
     - target: {fileID: 3994731110900675472, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_IsActive
@@ -7710,26 +7826,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3994731110900182640, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00283
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985766463476776107, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 77641c53c84119146b8a931af69f1f2b, type: 2}
     - target: {fileID: 3994731110910050806, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c6161b79b9fc27e4ebee6837faab35b0, type: 2}
-    - target: {fileID: 4891354420336511867, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
 --- !u!1 &1263178789 stripped
@@ -7784,6 +7885,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 1339333999}
   stage2Animator: {fileID: 1263178791}
+--- !u!114 &1263178797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6821174653373054415, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263178788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263178792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d149454d84a37f64185ad1b407231bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1263178799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6821174654058212353, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
@@ -8172,6 +8285,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &1315178784
 PrefabInstance:
@@ -8932,6 +9046,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &1386808953
 GameObject:
@@ -10314,7 +10429,7 @@ GameObject:
   - component: {fileID: 1582648629}
   - component: {fileID: 1582648628}
   m_Layer: 5
-  m_Name: Interactables
+  m_Name: Interactable Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11804,6 +11919,7 @@ MonoBehaviour:
   target: {fileID: 581708051}
   counterpart: {fileID: 510510805}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1001 &1822788984
 PrefabInstance:
@@ -11924,6 +12040,7 @@ MonoBehaviour:
   target: {fileID: 510510805}
   counterpart: {fileID: 581708051}
   textBox: {fileID: 1582648626}
+  playerControllerScript: {fileID: 1263178797}
   textInBox: {fileID: 1582648628}
 --- !u!1 &1856388293
 GameObject:

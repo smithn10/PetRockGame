@@ -9,6 +9,7 @@ public class ButtonScript : MonoBehaviour {
     public GameObject cam;
     public GameObject connectionObject;
     public GameObject textBox;
+    public CharControl playerControllerScript;
     public Text textInBox;
     public float Distance = 6f;
     private float DistCovered = 0f;
@@ -31,12 +32,12 @@ public class ButtonScript : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject == rock) {
+        if (col.gameObject == rock || (col.gameObject.tag == "Player" && playerControllerScript.IsPlayerHolding())) {
             onButton = true;
             textBox.SetActive(false);
         } else {
             textBox.SetActive(true);
-            textInBox.text = "Not heavy enough to activate";
+            textInBox.text = "Rock needed to activate";
         }
     }
 

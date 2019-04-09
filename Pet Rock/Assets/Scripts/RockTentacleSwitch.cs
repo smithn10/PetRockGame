@@ -14,6 +14,7 @@ public class RockTentacleSwitch : MonoBehaviour {
     public float Distance = 6f;
     public float angleThreshold;
     public float distanceThreshold;
+    public bool canBeSwitchedBack = true;
     public bool leverActive;
     private float DistCovered = 0f;
     private bool inRange = false;
@@ -52,7 +53,7 @@ public class RockTentacleSwitch : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider col) {
-        if ((col.name == "Rock") && (cam.GetComponent<SmoothFollow>().followTarget == rock)) {
+        if ((col.name == "Rock") && (cam.GetComponent<SmoothFollow>().followTarget == rock) && (canBeSwitchedBack)) {
             inRange = true; // update in range when entering lever tentacle trigger range
         } else {
             textBox.SetActive(false);
