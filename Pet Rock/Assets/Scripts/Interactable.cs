@@ -40,8 +40,6 @@ public class Interactable : MonoBehaviour
             }
             else
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-
                 this.transform.position = pickupparent.transform.position + pickupparent.transform.forward * 1.2f;
                 this.GetComponent<CharControl>().resetVelocity();
                 this.transform.forward = pickupparent.transform.forward;
