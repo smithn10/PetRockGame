@@ -11,6 +11,7 @@ public class ButtonScript : MonoBehaviour {
     public GameObject textBox;
     public CharControl playerControllerScript;
     public Text textInBox;
+    public Wiring lightingPath = null;
     public float Distance = 6f;
     private float DistCovered = 0f;
     public float speed = 0f;
@@ -24,11 +25,19 @@ public class ButtonScript : MonoBehaviour {
                 connectionObject.transform.Translate(Vector3.forward * thisMoveDist);
                 DistCovered += thisMoveDist;
             }
+            if (lightingPath != null)
+            {
+                lightingPath.turnOn();
+            }
+        }else if (lightingPath != null)
+        {
+            lightingPath.turnOff();
         }
 
         if (cam.GetComponent<SmoothFollow>().followTarget == rock) { // check to see if character was switched to rock after trigger was enter
             textBox.SetActive(false);
         }
+
     }
 
     void OnTriggerEnter(Collider col) {
