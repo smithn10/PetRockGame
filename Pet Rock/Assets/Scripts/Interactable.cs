@@ -14,7 +14,10 @@ public class Interactable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        width = transform.localScale.x * GetComponent<CapsuleCollider>().radius;
+        if (interacttype == "pickup")
+        {
+            width = transform.localScale.x * GetComponent<CapsuleCollider>().radius;
+        }
         parentPos = new Vector3(0, 0, 0);
     }
 
