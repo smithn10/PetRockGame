@@ -25,12 +25,12 @@ public class CameraOrbit : MonoBehaviour
 
         // allow camera to orbit horizontally
         float scrollMovement = Input.GetAxis("Mouse X") * Time.deltaTime * hSensitivity;
-        transform.RotateAround(smoothingObject.position, Vector3.up, scrollMovement);
+        transform.parent.RotateAround(smoothingObject.GetComponent<SmoothFollow>().followTarget.transform.position, Vector3.up, scrollMovement);
 
+        // allow camera to orbit vertically
         float xrot = transform.rotation.eulerAngles.x;
         float maxRot = maxVAngle - xrot - .1f;
         float minRot = minVAngle - xrot + .1f;
-        // allow camera to orbit vertically
         float verticalScroll = Input.GetAxis("Mouse Y") * Time.deltaTime * vSensitivity * -1;
         verticalScroll = Mathf.Min(maxRot, verticalScroll);
         verticalScroll = Mathf.Max(minRot, verticalScroll);
