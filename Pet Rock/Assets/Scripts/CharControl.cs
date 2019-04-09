@@ -30,6 +30,7 @@ public class CharControl : MonoBehaviour
     private int i = 0;
     private CharacterController capsule;
     private bool spaceHeld = false;
+    private Vector3 bestForward = new Vector3(0, 0, 0);
     // Start is called before the first frame update 
     void Start()
     {
@@ -137,7 +138,8 @@ public class CharControl : MonoBehaviour
             }
 
             if (forward.magnitude > 0.2)
-                transform.forward = Vector3.RotateTowards(transform.forward, forward, 7 * Time.deltaTime, 0);
+                bestForward = forward;
+            transform.forward = Vector3.RotateTowards(transform.forward, bestForward, 9 * Time.deltaTime, 0);
 
             CheckSquish();
             //jumping, tests if the collider is grounded 
