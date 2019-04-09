@@ -11,14 +11,13 @@ public class RockPlatformTrigger : MonoBehaviour {
         if (col.gameObject == rock) {
             leverActive.rockInPlace = true;
             leverInactive.rockInPlace = true;
-            Debug.Log("Rock, update rockinplace");
-        } else { Debug.Log("NOT ROCK"); }
-        
+        }
     }
 
     void OnTriggerExit(Collider other) {
-        leverActive.rockInPlace = false;
-        leverInactive.rockInPlace = false;
-        Debug.Log("Exit trigger");
+        if (other.gameObject == rock) {
+            leverActive.rockInPlace = false;
+            leverInactive.rockInPlace = false;
+        }
     }
 }
