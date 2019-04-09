@@ -19,15 +19,24 @@ public class SwitchMovingBlocks : MonoBehaviour {
     private float DistCovered = 0f;
     private bool inRange = false;
     public bool leverActive = false;
+    public Wiring lightingPath = null;
 
     void Update() {
         if (inRange) {
             if ((Input.GetKeyDown(KeyCode.E)) && (!leverActive)) {
                 activeState.SetActive(!activeState.activeSelf);
                 gameObject.SetActive(!gameObject.activeSelf);
+                if (lightingPath != null)
+                {
+                    lightingPath.toggle();
+                }
             } else if ((Input.GetKeyDown(KeyCode.E)) && (leverActive)) {
                 activeState.SetActive(!activeState.activeSelf);
                 gameObject.SetActive(!gameObject.activeSelf);
+                if (lightingPath != null)
+                {
+                    lightingPath.toggle();
+                }
             }
         }
 
