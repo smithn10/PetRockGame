@@ -8126,7 +8126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015000001, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.675, y: -60.1}
+  m_AnchoredPosition: {x: -6.674988, y: -60.1}
   m_SizeDelta: {x: -13.35, y: 96.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1299235882
@@ -11335,6 +11335,10 @@ MonoBehaviour:
   player: {fileID: 1263178792}
   rock: {fileID: 1263178789}
   endGate: {fileID: 1626447301}
+  files:
+  - {fileID: 4900000, guid: 13bbe069981899c46a60c0a21cdc778b, type: 3}
+  - {fileID: 4900000, guid: 6ed1a6967f95f894cb7f426b9f59c825, type: 3}
+  - {fileID: 4900000, guid: a17a38f11f2cae74887222d8c377ca4a, type: 3}
   stage: 2
   enemyCount: 12
 --- !u!114 &1693002458
