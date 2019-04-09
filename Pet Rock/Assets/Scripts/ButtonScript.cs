@@ -34,7 +34,7 @@ public class ButtonScript : MonoBehaviour {
             lightingPath.turnOff();
         }
 
-        if (cam.GetComponent<SmoothFollow>().followTarget == rock) { // check to see if character was switched to rock after trigger was enter
+        if (cam.GetComponent<SmoothFollow>().followTarget == rock && !playerControllerScript.IsPlayerHolding()) { // check to see if character was switched to rock after trigger was enter
             textBox.SetActive(false);
         }
 

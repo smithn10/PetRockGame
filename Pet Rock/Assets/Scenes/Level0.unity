@@ -5031,6 +5031,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: rock
+      value: 
+      objectReference: {fileID: 893548282}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 215070597}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: playerControllerScript
+      value: 
+      objectReference: {fileID: 893548294}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: smoothCamScript
+      value: 
+      objectReference: {fileID: 1271377733}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: textInBox
+      value: 
+      objectReference: {fileID: 215070599}
     m_RemovedComponents:
     - {fileID: 6821174653373054401, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
     - {fileID: 6821174653373054400, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
@@ -6766,6 +6791,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1049423982008479439}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1271377733 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1049423981920547955, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1049423982008479439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271377731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ffed695feffea4f9d63c9d1e9ebd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1274512856
 GameObject:
   m_ObjectHideFlags: 0
@@ -11171,6 +11208,31 @@ PrefabInstance:
       propertyPath: rockTransform
       value: 
       objectReference: {fileID: 893548284}
+    - target: {fileID: 942907366137211396, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+        type: 3}
+      propertyPath: rock
+      value: 
+      objectReference: {fileID: 893548282}
+    - target: {fileID: 942907366137211396, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 215070597}
+    - target: {fileID: 942907366137211396, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+        type: 3}
+      propertyPath: textInBox
+      value: 
+      objectReference: {fileID: 215070599}
+    - target: {fileID: 942907366137211396, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+        type: 3}
+      propertyPath: smoothCamScript
+      value: 
+      objectReference: {fileID: 1271377733}
+    - target: {fileID: 942907366137211396, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+        type: 3}
+      propertyPath: playerControllerScript
+      value: 
+      objectReference: {fileID: 893548294}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af637379f8ddd84459bc7d8cb8d9e0bb, type: 3}
 --- !u!1001 &3333042804114403054
