@@ -1687,7 +1687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.015000001, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.8, y: -63.7}
+  m_AnchoredPosition: {x: -6.799988, y: -63.7}
   m_SizeDelta: {x: -13.6, y: 103.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292730589
@@ -2838,6 +2838,31 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e3dc84c0345c8044a957bf3374f696d6, type: 2}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: rock
+      value: 
+      objectReference: {fileID: 506688119}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1730381234}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: playerControllerScript
+      value: 
+      objectReference: {fileID: 506688127}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: smoothCamScript
+      value: 
+      objectReference: {fileID: 578112010}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: textInBox
+      value: 
+      objectReference: {fileID: 1730381236}
     m_RemovedComponents:
     - {fileID: 893548295, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
@@ -3407,6 +3432,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 578112007}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &578112010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1049423981920547955, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 578112007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353806316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ffed695feffea4f9d63c9d1e9ebd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &595132965 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1646054562677108580, guid: 0abb61f2f04a36e46927b3fbce5c9462,
@@ -8743,6 +8780,7 @@ MonoBehaviour:
   player: {fileID: 506688122}
   rock: {fileID: 506688119}
   endGate: {fileID: 1205099077}
+  files: []
   stage: 3
   enemyCount: 20
 --- !u!1 &1499094009

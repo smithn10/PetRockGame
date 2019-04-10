@@ -304,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6821174654868928170}
   - component: {fileID: 6821174654868928171}
+  - component: {fileID: 7121442222423303117}
   m_Layer: 0
   m_Name: Players 2.0
   m_TagString: Untagged
@@ -342,6 +343,23 @@ MonoBehaviour:
   player1: {fileID: 6821174653373054413}
   player2: {fileID: 6821174654058212366}
   lockMovement: 0
+--- !u!114 &7121442222423303117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821174654868928168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7299d1e9c5bc4c44a91a1edebb6cd8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 0}
+  textBox: {fileID: 0}
+  playerControllerScript: {fileID: 0}
+  smoothCamScript: {fileID: 0}
+  textInBox: {fileID: 0}
 --- !u!1001 &1821005064840762812
 PrefabInstance:
   m_ObjectHideFlags: 0

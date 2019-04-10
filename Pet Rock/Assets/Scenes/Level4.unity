@@ -8328,6 +8328,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: rock
+      value: 
+      objectReference: {fileID: 922223903}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 502062422}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: playerControllerScript
+      value: 
+      objectReference: {fileID: 922223910}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: smoothCamScript
+      value: 
+      objectReference: {fileID: 1248882609}
+    - target: {fileID: 7121442222423303117, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: textInBox
+      value: 
+      objectReference: {fileID: 502062424}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
 --- !u!1 &922223903 stripped
@@ -9810,8 +9835,30 @@ MonoBehaviour:
   player: {fileID: 922223907}
   rock: {fileID: 922223903}
   endGate: {fileID: 1188035136}
+  files: []
   stage: 0
   enemyCount: 40
+--- !u!114 &1059153967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059153965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40430d98d42a58442912c45fb253dc2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 2084809925}
+  players: {fileID: 922223908}
+  cam: {fileID: 1248882608}
+  textInBox: {fileID: 1641043174}
+  file: {fileID: 0}
+  lines: []
+  currLineIndex: 0
+  maxLineIndex: 0
+  isEnabled: 0
 --- !u!1 &1095531448
 GameObject:
   m_ObjectHideFlags: 0
@@ -11442,6 +11489,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1248882606}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1248882609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1049423981920547955, guid: af637379f8ddd84459bc7d8cb8d9e0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1248882606}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ffed695feffea4f9d63c9d1e9ebd21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1251117546
 GameObject:
   m_ObjectHideFlags: 0
