@@ -3999,7 +3999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 1800663793}
   counterpart: {fileID: 431727003}
@@ -5288,7 +5288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 431727003}
   counterpart: {fileID: 1800663793}
@@ -7764,7 +7764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 431727003}
   counterpart: {fileID: 1800663793}
@@ -7895,7 +7895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 1800663793}
   counterpart: {fileID: 431727003}
@@ -8411,6 +8411,11 @@ PrefabInstance:
       propertyPath: canBite
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6821174654058212354, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: glideEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6821174654868928171, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: lockMovement
@@ -8434,7 +8439,7 @@ PrefabInstance:
     - target: {fileID: 4836796292860636706, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00152
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 4836796292860636706, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
@@ -8444,7 +8449,7 @@ PrefabInstance:
     - target: {fileID: 4836796292860636706, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0012
+      value: 0.0017
       objectReference: {fileID: 0}
     - target: {fileID: 4836796292860636706, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
@@ -13283,7 +13288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 431727003}
   counterpart: {fileID: 1800663793}
@@ -15462,7 +15467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 1800663793}
   counterpart: {fileID: 431727003}
@@ -17206,7 +17211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 1800663793}
   counterpart: {fileID: 431727003}
@@ -17584,7 +17589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60ecb49cb624049bd488bad8fd5e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1248882610}
   rock: {fileID: 922223903}
   target: {fileID: 431727003}
   counterpart: {fileID: 1800663793}
