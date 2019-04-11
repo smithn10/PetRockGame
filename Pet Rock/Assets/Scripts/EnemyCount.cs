@@ -10,6 +10,10 @@ public class EnemyCount : MonoBehaviour {
 
     void Update() {
         counter = gateOpenerScript.enemyCount;
-        myText.text = "Enemies left: " + counter;
+        if (counter > 0) {
+            myText.text = "Enemies left: " + counter;
+        } else {
+            myText.text = "LEVEL COMPLETE";
+        }
     }
 }
