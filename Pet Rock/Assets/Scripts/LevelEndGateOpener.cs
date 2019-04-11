@@ -50,6 +50,7 @@ public class LevelEndGateOpener : MonoBehaviour {
                     rock.transform.GetChild(3).gameObject.SetActive(false);
                     rock.transform.GetChild(4).gameObject.SetActive(true);
                     rock.GetComponent<BoyAnimationScript>().Evolve();
+                    GiveNewTip(files[3]);
                     break;
             }
         }

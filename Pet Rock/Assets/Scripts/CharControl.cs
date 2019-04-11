@@ -20,6 +20,7 @@ public class CharControl : MonoBehaviour
     public float interactDistance = 1;
     public GameObject rock;
     public GameObject gameManager;
+    public bool canBite = false;
 
     private Transform attachedobjectmin;
     private Transform attachedobjectmax;
@@ -142,6 +143,7 @@ public class CharControl : MonoBehaviour
             transform.forward = Vector3.RotateTowards(transform.forward, bestForward, 9 * Time.deltaTime, 0);
 
             CheckSquish();
+            CheckBite();
             //jumping, tests if the collider is grounded 
             if (control.isGrounded)
             {
@@ -322,12 +324,31 @@ public class CharControl : MonoBehaviour
             }
         }
     }
+    private void CheckBite() {
+        if (canBite) {
+            Collider[] biteColliders = Physics.OverlapBox(this.transform.position, this.transform.localScale / 40);
+
+            for (int i = 0; i < biteColliders.Length; i++) {
+
+                Debug.Log("Hit : " + biteColliders[i].name + i);
+                if (gameObject.tag == "Rock" && biteColliders[i].tag == "Enemy") {
+                    Destroy(biteColliders[i].transform.parent.gameObject);
+                    gameManager.SendMessage("DecreaseCount");
+                }
+            }
+        }
+    }
     void OnDrawGizmos()
     {
         //draw where it will be (about) next frame
         CharacterController capsule = this.GetComponent<CharacterController>();
         Vector3 bottomSphere = this.transform.position - new Vector3(0, (capsule.height*transform.lossyScale.y) / 2 - capsule.radius * transform.lossyScale.y, 0);
         Gizmos.DrawWireSphere(bottomSphere + chVelocity * Time.deltaTime * 2, capsule.radius*transform.lossyScale.y);
+
+        if (this.gameObject.tag == "Rock") {
+            //Gizmos.color = Color.red;
+            //Gizmos.DrawWireCube(this.transform.position, this.transform.localScale / 40);
+        }
     }
     public bool IsPlayerHolding() { return holdingSomething; }
-}   
+}

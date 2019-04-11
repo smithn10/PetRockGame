@@ -1,2 +1,2 @@
-You can now activate some levers with the rock's tentacle.
-When facing far away levers you will prompted to press [E] as the rock to use your tentacle.
+You can now activate levers with the rock's tentacle.
+When near a lever as the rock you will be prompted to press [E] to use your tentacle.
