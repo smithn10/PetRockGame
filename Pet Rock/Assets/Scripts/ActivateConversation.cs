@@ -22,9 +22,9 @@ public class ActivateConversation : MonoBehaviour {
                 dialogueManager.Reload(file); // reload function described in DialogueManager script
                 dialogueManager.currLineIndex = 0;
                 dialogueManager.EnableTextBox();
-                player.transform.LookAt(transform); // make player look at the NPC
-                transform.LookAt(player.transform); // make NPC look at the player
-                cam.transform.LookAt(transform); // focus camera on NPC
+                //player.transform.LookAt(transform); // make player look at the NPC
+                //transform.LookAt(player.transform); // make NPC look at the player
+                //cam.transform.LookAt(transform); // focus camera on NPC
             }
         }
     }

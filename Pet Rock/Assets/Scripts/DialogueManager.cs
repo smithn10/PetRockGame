@@ -42,6 +42,8 @@ public class DialogueManager : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.Escape)) {
             currLineIndex = maxLineIndex + 1;
+            inputController.lockMovement = false;
+            cameraScript.lockOrbit = false;
         }
 
         if(currLineIndex > maxLineIndex) { // if the dialogue is over then take the text box away
@@ -64,11 +66,11 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void Reload(TextAsset newFile) { // function to load in a new text file for other dialogues
-        if(newFile != null) { // make sure the text asset being passed in is not null
+        //if(newFile != null) { // make sure the text asset being passed in is not null
             string[] newLines = (newFile.text.Split('\n')); // split the new file into lines
             lines = newLines; // update lines to be new lines and avoid aliasing
             maxLineIndex = lines.Length - 1; // update the max lines
-        }
+        //}
     }
 }
 
