@@ -24,12 +24,14 @@ public class ButtonSetScript : MonoBehaviour {
             
             if(!targetsActivated) { // case that the switches targets are not yet active
                 target.SetActive(!target.activeSelf); // activate them
-                thisWiring.turnOn();
+                if(thisWiring != null)
+                    thisWiring.turnOn();
             }
 
             if(counterpartsActivated) { // case that the switches counterparts are active
                 counterpart.SetActive(!counterpart.activeSelf); // deactive them
-                counterpartWiring.turnOff();
+                if (counterpartWiring != null)
+                    counterpartWiring.turnOff();
             }
 
             onButton = false;
