@@ -39,7 +39,15 @@ public class Squishable : MonoBehaviour
         }
     }
 
-    void StartSquishing(GameObject rck)
+    public void DieInstant()
+    {
+        gameManager.DecreaseCount();
+        if (deathParticle != null)
+            Instantiate(deathParticle, transform.position, Quaternion.Euler(-90, 0, 0));
+        Destroy(transform.parent.gameObject);
+    }
+
+    public void StartSquishing(GameObject rck)
     {
         rock = rck;
         rockHeight = rck.transform.lossyScale.y * rck.GetComponent<CapsuleCollider>().radius + rck.transform.lossyScale.y * rck.GetComponent<CapsuleCollider>().height;

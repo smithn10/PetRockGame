@@ -336,8 +336,7 @@ public class CharControl : MonoBehaviour
 
                 Debug.Log("Hit : " + biteColliders[i].name + i);
                 if (gameObject.tag == "Rock" && biteColliders[i].tag == "Enemy") {
-                    Destroy(biteColliders[i].transform.parent.gameObject);
-                    gameManager.SendMessage("DecreaseCount");
+                    biteColliders[i].GetComponent<Squishable>().DieInstant();
                 }
             }
         }
