@@ -306,6 +306,11 @@ public class CharControl : MonoBehaviour
         chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
         // SendMessage("Jumping", true);
     }
+    public void JumpFactor(float factor)
+    {
+        chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * factor * -.2f * gravitystore), 0);
+        // SendMessage("Jumping", true);
+    }
     void MoveInstant(Vector3 vec)
     {
         transform.Translate(vec);
@@ -318,9 +323,8 @@ public class CharControl : MonoBehaviour
         {
             if (gameObject.tag == "Rock" && chVelocity.y < -5 && hitColliders[i].tag == "Enemy")
             {
+                hitColliders[i].SendMessage("StartSquishing", gameObject);
                 Debug.Log("Enemy Hit");
-                Destroy(hitColliders[i].transform.parent.gameObject);
-                gameManager.SendMessage("DecreaseCount");
             }
         }
     }

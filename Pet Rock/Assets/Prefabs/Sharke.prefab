@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 4078185145783322296}
   - component: {fileID: 4078185145783322278}
   - component: {fileID: 4078185145783322297}
+  - component: {fileID: 2218225761797901487}
   m_Layer: 0
   m_Name: SharkeControl
   m_TagString: Enemy
@@ -714,6 +715,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 5
+--- !u!114 &2218225761797901487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078185145783322299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300049cb05d3ae049a9499190a0c3525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &4078185145896058639
 GameObject:
   m_ObjectHideFlags: 0

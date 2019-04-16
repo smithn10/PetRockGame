@@ -56,7 +56,7 @@ public class LevelEndGateOpener : MonoBehaviour {
         }
     }
 
-    void DecreaseCount() { enemyCount--; }
+    public void DecreaseCount() { enemyCount--; }
 
     void GiveNewTip(TextAsset file) {
         dialogueManager.Reload(file); // reload function described in DialogueManager script

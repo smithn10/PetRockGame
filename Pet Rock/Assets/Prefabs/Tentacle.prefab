@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 6606256237662076232}
   - component: {fileID: 6606256237662076246}
   - component: {fileID: 6606256237662076233}
+  - component: {fileID: 5249775805148589419}
   m_Layer: 0
   m_Name: TentacleControl
   m_TagString: Enemy
@@ -591,6 +592,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movespeed: 5
+--- !u!114 &5249775805148589419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606256237662076235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300049cb05d3ae049a9499190a0c3525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &6606256237749263720
 GameObject:
   m_ObjectHideFlags: 0
