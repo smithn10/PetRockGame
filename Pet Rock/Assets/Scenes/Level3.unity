@@ -1340,7 +1340,7 @@ MonoBehaviour:
   activeState: {fileID: 595132965}
   textBox: {fileID: 1730381234}
   textInBox: {fileID: 1730381236}
-  lightingPath: {fileID: 0}
+  lightingPath: {fileID: 430831483}
   canBeSwitchedBack: 1
   rockCanSwitch: 1
 --- !u!4 &83360190 stripped
@@ -6380,7 +6380,7 @@ MonoBehaviour:
   activeState: {fileID: 83360187}
   textBox: {fileID: 1730381234}
   textInBox: {fileID: 1730381236}
-  lightingPath: {fileID: 0}
+  lightingPath: {fileID: 430831483}
   canBeSwitchedBack: 0
   rockCanSwitch: 1
 --- !u!1 &603554536
