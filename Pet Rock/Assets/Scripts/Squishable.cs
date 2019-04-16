@@ -9,6 +9,7 @@ public class Squishable : MonoBehaviour
     private Vector3 rockPos;
     private float rockHeight;
     public LevelEndGateOpener gameManager;
+    public GameObject deathParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,8 @@ public class Squishable : MonoBehaviour
             if (childT.localScale.y < 0.01f)
             {
                 gameManager.DecreaseCount();
+                if (deathParticle != null)
+                    Instantiate(deathParticle, transform.position, Quaternion.Euler(-90, 0, 0));
                 Destroy(transform.parent.gameObject);
             }
         }
