@@ -8,6 +8,8 @@ public class ButtonSetScript : MonoBehaviour {
     public GameObject rock;
     public GameObject target;
     public GameObject counterpart;
+    public Wiring thisWiring;
+    public Wiring counterpartWiring;
     public GameObject textBox;
     public CharControl playerControllerScript;
     public Text textInBox;
@@ -22,10 +24,12 @@ public class ButtonSetScript : MonoBehaviour {
             
             if(!targetsActivated) { // case that the switches targets are not yet active
                 target.SetActive(!target.activeSelf); // activate them
+                thisWiring.turnOn();
             }
 
             if(counterpartsActivated) { // case that the switches counterparts are active
                 counterpart.SetActive(!counterpart.activeSelf); // deactive them
+                counterpartWiring.turnOff();
             }
 
             onButton = false;
