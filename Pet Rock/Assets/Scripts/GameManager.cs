@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
     
 
     void Update() {
-        if((Input.GetKeyDown(KeyCode.Tab)) && (!paused) && !gameEnded) {
+        if (inpMangr.lockMovement == false && (Input.GetKeyDown(KeyCode.Tab)) && (!paused) && !gameEnded) {
             if(activePlayer) { // switch to rock
                 cam.SendMessage("FocusRock");
                 inpMangr.DisableFollow();
