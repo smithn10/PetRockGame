@@ -10,6 +10,7 @@ public class ButtonMeshEnableScript : MonoBehaviour {
     public GameObject textBox;
     public CharControl playerControllerScript;
     public Text textInBox;
+    public Wiring wiring;
     private bool onButton = false;
     private bool activated = false;
 
@@ -17,6 +18,7 @@ public class ButtonMeshEnableScript : MonoBehaviour {
         if ((onButton) && (!activated)) {
             target.SetActive(!target.activeSelf);
             activated = true;
+            wiring.turnOn();
         }
     }
 
