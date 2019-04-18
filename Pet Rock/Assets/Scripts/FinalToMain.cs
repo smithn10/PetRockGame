@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class FinalToMain : MonoBehaviour {
 
     void OnEnable() {
+        Cursor.visible = true;
         SceneManager.LoadScene("Main Menu Scene");
     }
 }
