@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuButtons : MonoBehaviour {
 
     public void PlayGame() {
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene("Beginning Comic");
     }
 
     public void QuitGame() {

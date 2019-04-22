@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Comics
+    uniqueID: 1272629869
+    locked: 0
+  - name: Text
+    uniqueID: 3129600575
+    locked: 0

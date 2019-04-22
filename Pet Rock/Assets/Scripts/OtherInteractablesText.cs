@@ -9,7 +9,6 @@ public class OtherInteractablesText : MonoBehaviour {
     public string info;
 
     void OnTriggerEnter(Collider col) {
-        Debug.Log("Trigger entered by: " + col.name);
         if (col.name == "Character") { // player collided with object
             textBox.SetActive(true);
             textInBox.text = info;
