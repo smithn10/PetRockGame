@@ -10031,6 +10031,16 @@ PrefabInstance:
       propertyPath: lockMovement
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3157938108417350278, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157938108410095840, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c6161b79b9fc27e4ebee6837faab35b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1419d92ee4a22934b9ebac3f17d4acbb, type: 3}
 --- !u!1 &1263178789 stripped
@@ -10042,6 +10052,12 @@ GameObject:
 --- !u!95 &1263178790 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1821005064850219228, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263178788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1263178791 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3157938108410095840, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
     type: 3}
   m_PrefabInstance: {fileID: 1263178788}
   m_PrefabAsset: {fileID: 0}
@@ -10078,7 +10094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 1339333999}
-  stage2Animator: {fileID: 0}
+  stage2Animator: {fileID: 1263178791}
 --- !u!114 &1263178797 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6821174653373054415, guid: 1419d92ee4a22934b9ebac3f17d4acbb,

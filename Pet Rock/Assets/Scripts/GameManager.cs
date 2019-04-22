@@ -37,8 +37,8 @@ public class GameManager : MonoBehaviour {
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)) { // check for when we add in the pause feature
-            if(paused) { paused = false; }
-            else { paused = true; }
+            //if(paused) { paused = false; }
+            //else { paused = true; }
         }
         
     }
