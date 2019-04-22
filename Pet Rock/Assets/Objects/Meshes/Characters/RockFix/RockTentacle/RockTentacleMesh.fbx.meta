@@ -111,7 +111,12 @@ ModelImporter:
     4300000: pCone2
     9500000: //RootNode
     13700000: pCone2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 7b8d950c56f3c2740be36d699f9f1865, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

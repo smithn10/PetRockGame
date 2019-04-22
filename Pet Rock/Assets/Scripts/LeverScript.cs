@@ -9,15 +9,19 @@ public class LeverScript : MonoBehaviour {
     public GameObject activeState;
     public GameObject textBox;
     public Text textInBox;
+    public Animator animator;
     public Wiring lightingPath = null;
     public bool canBeSwitchedBack = true;
     public bool rockCanSwitch = false;
     private bool inRange = false;
     private bool leverActive = false;
+    private bool isPlayer = true;
 
     void Update() {
         //toggle active state of stairs, lever, and other lever
-        if (inRange && Input.GetKeyDown(KeyCode.E)) {   
+        if (inRange && Input.GetKeyDown(KeyCode.E)) { 
+            if(!isPlayer) { animator.Play("RockTentacleSwitch"); }
+
             target.SetActive(!target.activeSelf);
             activeState.SetActive(!activeState.activeSelf);
             gameObject.SetActive(!gameObject.activeSelf);
@@ -34,6 +38,8 @@ public class LeverScript : MonoBehaviour {
             inRange = true; // update in range when entering lever trigger range
             textBox.SetActive(true);
             textInBox.text = "Press [E] to use lever";
+            if(col.name == "Rock") { isPlayer = false; }
+            else if (col.name == "Character") { isPlayer = true; }
         } else if (!canBeSwitchedBack) { textBox.SetActive(false); }
     }
 

@@ -21,6 +21,7 @@ public class CharControl : MonoBehaviour
     public GameObject rock;
     public GameObject gameManager;
     public bool canBite = false;
+    public Animator animator;
 
     private Transform attachedobjectmin;
     private Transform attachedobjectmax;
@@ -32,6 +33,7 @@ public class CharControl : MonoBehaviour
     private CharacterController capsule;
     private bool spaceHeld = false;
     private Vector3 bestForward = new Vector3(0, 0, 0);
+
     // Start is called before the first frame update 
     void Start()
     {
@@ -262,7 +264,6 @@ public class CharControl : MonoBehaviour
                 helditem.GetComponent<CharControl>().Jump();
                 helditem.GetComponent<CharControl>().VelocityImpulse(transform.forward * throwPower);
             }
-            //rock.SendMessage("DisableFollow");
             return;
         }
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, interactDistance);
@@ -304,12 +305,10 @@ public class CharControl : MonoBehaviour
     void Jump()
     {
         chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * -.2f * gravitystore), 0);
-        // SendMessage("Jumping", true);
     }
     public void JumpFactor(float factor)
     {
         chVelocity += new Vector3(0, Mathf.Sqrt(jumpheight * factor * -.2f * gravitystore), 0);
-        // SendMessage("Jumping", true);
     }
     void MoveInstant(Vector3 vec)
     {
@@ -324,18 +323,16 @@ public class CharControl : MonoBehaviour
             if (gameObject.tag == "Rock" && chVelocity.y < -5 && hitColliders[i].tag == "Enemy")
             {
                 hitColliders[i].SendMessage("StartSquishing", gameObject);
-                Debug.Log("Enemy Hit");
             }
         }
     }
     private void CheckBite() {
         if (canBite) {
-            Collider[] biteColliders = Physics.OverlapBox(this.transform.position, this.transform.localScale / 40);
+            Collider[] biteColliders = Physics.OverlapBox(this.transform.position, this.transform.localScale / 60);
 
             for (int i = 0; i < biteColliders.Length; i++) {
-
-                Debug.Log("Hit : " + biteColliders[i].name + i);
                 if (gameObject.tag == "Rock" && biteColliders[i].tag == "Enemy") {
+                    animator.Play("Bite");
                     biteColliders[i].GetComponent<Squishable>().DieInstant();
                 }
             }
@@ -349,8 +346,8 @@ public class CharControl : MonoBehaviour
         Gizmos.DrawWireSphere(bottomSphere + chVelocity * Time.deltaTime * 2, capsule.radius*transform.lossyScale.y);
 
         if (this.gameObject.tag == "Rock") {
-            //Gizmos.color = Color.red;
-            //Gizmos.DrawWireCube(this.transform.position, this.transform.localScale / 40);
+           //Gizmos.color = Color.red;
+           //Gizmos.DrawWireCube(this.transform.position, this.transform.localScale / 60);
         }
     }
     public bool IsPlayerHolding() { return holdingSomething; }
