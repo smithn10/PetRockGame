@@ -11,8 +11,10 @@ public class LeverScript : MonoBehaviour {
     public Text textInBox;
     public Animator animator;
     public Wiring lightingPath = null;
+    public AudioSource sfx;
     public bool canBeSwitchedBack = true;
     public bool rockCanSwitch = false;
+    public bool bridgeConnector = false;
     private bool inRange = false;
     private bool leverActive = false;
     private bool isPlayer = true;
@@ -21,6 +23,7 @@ public class LeverScript : MonoBehaviour {
         //toggle active state of stairs, lever, and other lever
         if (inRange && Input.GetKeyDown(KeyCode.E)) { 
             if(!isPlayer) { animator.Play("RockTentacleSwitch"); }
+            if(bridgeConnector) { sfx.Play(); }
 
             target.SetActive(!target.activeSelf);
             activeState.SetActive(!activeState.activeSelf);

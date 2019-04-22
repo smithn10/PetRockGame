@@ -11,6 +11,7 @@ public class ButtonMeshEnableScript : MonoBehaviour {
     public CharControl playerControllerScript;
     public Text textInBox;
     public Wiring wiring;
+    public AudioSource sfx;
     private bool onButton = false;
     private bool activated = false;
 
@@ -26,6 +27,7 @@ public class ButtonMeshEnableScript : MonoBehaviour {
         if (col.gameObject == rock || (col.gameObject.tag == "Player" && playerControllerScript.IsPlayerHolding())) {
             onButton = true;
             textBox.SetActive(false);
+            sfx.Play();
         } else {
             textBox.SetActive(true);
             textInBox.text = "Rock needed to activate";

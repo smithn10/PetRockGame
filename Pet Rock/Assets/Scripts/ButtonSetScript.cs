@@ -13,6 +13,7 @@ public class ButtonSetScript : MonoBehaviour {
     public GameObject textBox;
     public CharControl playerControllerScript;
     public Text textInBox;
+    public AudioSource sfx;
     private bool onButton = false;
     private bool targetsActivated = false;
     private bool counterpartsActivated = false;
@@ -46,6 +47,7 @@ public class ButtonSetScript : MonoBehaviour {
         if ((col.gameObject == rock) || (col.gameObject.tag == "Player" && playerControllerScript.IsPlayerHolding())) {
             onButton = true;
             textBox.SetActive(false);
+            sfx.Play();
         } else {
             textBox.SetActive(true);
             textInBox.text = "Rock needed to activate";

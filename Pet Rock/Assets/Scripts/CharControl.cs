@@ -22,6 +22,7 @@ public class CharControl : MonoBehaviour
     public GameObject gameManager;
     public bool canBite = false;
     public Animator animator;
+    public AudioSource squish;
 
     private Transform attachedobjectmin;
     private Transform attachedobjectmax;
@@ -322,6 +323,7 @@ public class CharControl : MonoBehaviour
         {
             if (gameObject.tag == "Rock" && chVelocity.y < -5 && hitColliders[i].tag == "Enemy")
             {
+                squish.Play();
                 hitColliders[i].SendMessage("StartSquishing", gameObject);
             }
         }
@@ -333,6 +335,7 @@ public class CharControl : MonoBehaviour
             for (int i = 0; i < biteColliders.Length; i++) {
                 if (gameObject.tag == "Rock" && biteColliders[i].tag == "Enemy") {
                     animator.Play("Bite");
+                    squish.Play();
                     biteColliders[i].GetComponent<Squishable>().DieInstant();
                 }
             }
