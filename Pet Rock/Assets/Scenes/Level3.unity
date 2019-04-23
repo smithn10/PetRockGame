@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4904,11 +4904,6 @@ PrefabInstance:
       propertyPath: canMove
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3994731110900182640, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00239
-      objectReference: {fileID: 0}
     - target: {fileID: 4836796292860636706, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -4954,7 +4949,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.0012
       objectReference: {fileID: 0}
-    - target: {fileID: 3994731110910050806, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+    - target: {fileID: 3157938108410095840, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_Controller
       value: 
@@ -4964,12 +4959,17 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e3dc84c0345c8044a957bf3374f696d6, type: 2}
-    - target: {fileID: 4891354420327004445, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+    - target: {fileID: 3994731110900182640, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00239
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994731110910050806, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c6161b79b9fc27e4ebee6837faab35b0, type: 2}
-    - target: {fileID: 3157938108410095840, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
+    - target: {fileID: 4891354420327004445, guid: 1419d92ee4a22934b9ebac3f17d4acbb,
         type: 3}
       propertyPath: m_Controller
       value: 
@@ -6366,7 +6366,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d230673c05c977d41ae1bf1cbe2e0409, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 305f0c2fdc9439c4d8ab114ec9751100, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
