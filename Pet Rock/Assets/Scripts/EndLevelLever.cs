@@ -22,7 +22,6 @@ public class EndLevelLever : MonoBehaviour {
 
     void Update() {
         if ((inRange) && (Input.GetKeyDown(KeyCode.E)) && (!leverActive)) {
-            ladderBlock.SetActive(!ladderBlock.activeSelf);
             activeState.SetActive(!activeState.activeSelf);
             gameObject.SetActive(!gameObject.activeSelf);
             manager.gameEnded = true;
@@ -35,6 +34,7 @@ public class EndLevelLever : MonoBehaviour {
         if(leverActive) {
             float thisMoveDist = Mathf.Min(speed * Time.deltaTime, Distance - DistCovered);
             rockPlatform.transform.Translate(Vector3.up * thisMoveDist);
+            ladderBlock.transform.Translate(Vector3.up * thisMoveDist);
             DistCovered += thisMoveDist;
             textInBox.text = "";
         }
