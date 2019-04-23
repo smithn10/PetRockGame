@@ -49,6 +49,9 @@ public class FinalScript : MonoBehaviour {
     void PlayerRunning(bool b) { playerAnim.SetBool("isRunning", b); }
     void RockMoving(bool b) { rockAnim.SetBool("isMoving", b); }
     public void RockBite(bool b) { rockAnim.SetBool("isBiting", b); }
+    public void PlayerMovingBack(bool b) { playerAnim.SetBool("isMovingBack", b); }
+    public void PlayerFall(bool b) { playerAnim.SetBool("isFallingBack", b); }
+    public void PlayerScared(bool b) { playerAnim.SetBool("isScared", b); }
 
     void ShowText(int i) {
         if (i >= texts.Length) { textInBox.text = ""; }
